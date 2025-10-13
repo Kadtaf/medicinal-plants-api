@@ -31,10 +31,6 @@ public class PlantService {
     }
 
 
-    public Plant createPlant(Plant plant){
-        return plantRepository.save(plant);
-    }
-
     public void deletePlant(Long id){
         plantRepository.deleteById(id);
     }
