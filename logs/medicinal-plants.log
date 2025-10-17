@@ -1,74 +1,118 @@
-2025-10-13 14:04:17 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2025-10-13 14:04:17 INFO  [main] c.d.m.MedicinalPlantsApiApplicationTests - Starting MedicinalPlantsApiApplicationTests using Java 21.0.8 with PID 6656 (started by kader in C:\Users\kader\medicinal-plants-api)
-2025-10-13 14:04:17 DEBUG [main] c.d.m.MedicinalPlantsApiApplicationTests - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-10-13 14:04:17 INFO  [main] c.d.m.MedicinalPlantsApiApplicationTests - No active profile set, falling back to 1 default profile: "default"
-2025-10-13 14:04:17 DEBUG [main] o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@988246e
-2025-10-13 14:04:18 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-13 14:04:18 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
-2025-10-13 14:04:19 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-10-13 14:04:19 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:medicinaldb user=SA
-2025-10-13 14:04:19 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-10-13 14:04:19 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-13 14:04:19 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-10-13 14:04:20 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-10-13 14:04:20 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-13 14:04:20 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-10-13 14:04:21 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-13 14:04:21 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-13 14:04:22 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-13 14:04:22 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 13 mappings in 'requestMappingHandlerMapping'
-2025-10-13 14:04:22 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2025-10-13 14:04:22 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-10-13 14:04:22 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-10-13 14:04:22 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:medicinaldb'
-2025-10-13 14:04:23 INFO  [main] c.d.m.MedicinalPlantsApiApplicationTests - Started MedicinalPlantsApiApplicationTests in 5.963 seconds (process running for 7.077)
-2025-10-13 14:04:23 DEBUG [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@988246e, started on Mon Oct 13 14:04:17 CEST 2025
-2025-10-13 14:04:23 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-13 14:04:23 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-10-13 14:04:23 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-10-13 14:05:24 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2025-10-13 14:05:24 INFO  [main] c.d.m.MedicinalPlantsApiApplication - Starting MedicinalPlantsApiApplication using Java 21.0.8 with PID 5528 (C:\Users\kader\medicinal-plants-api\target\classes started by kader in C:\Users\kader\medicinal-plants-api)
-2025-10-13 14:05:24 DEBUG [main] c.d.m.MedicinalPlantsApiApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-10-13 14:05:24 INFO  [main] c.d.m.MedicinalPlantsApiApplication - No active profile set, falling back to 1 default profile: "default"
-2025-10-13 14:05:25 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-13 14:05:25 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
-2025-10-13 14:05:25 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-10-13 14:05:25 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-10-13 14:05:25 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-10-13 14:05:25 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-10-13 14:05:25 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-10-13 14:05:25 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1006 ms
-2025-10-13 14:05:26 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-10-13 14:05:26 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:medicinaldb user=SA
-2025-10-13 14:05:26 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-10-13 14:05:26 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:medicinaldb'
-2025-10-13 14:05:26 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-13 14:05:26 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-10-13 14:05:26 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-10-13 14:05:26 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-13 14:05:26 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-10-13 14:05:27 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-13 14:05:27 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-13 14:05:27 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-13 14:05:27 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 13 mappings in 'requestMappingHandlerMapping'
-2025-10-13 14:05:27 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2025-10-13 14:05:27 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-10-13 14:05:27 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-10-13 14:05:27 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-10-13 14:05:27 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-2025-10-13 14:05:27 INFO  [main] c.d.m.MedicinalPlantsApiApplication - Started MedicinalPlantsApiApplication in 3.137 seconds (process running for 3.431)
-2025-10-13 14:07:51 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-10-13 14:07:51 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@29811d4d
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4c941d19
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2025-10-13 14:07:51 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+2025-10-17 10:40:40 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-10-17 10:40:40 INFO  [main] c.d.m.MedicinalPlantsApiApplication - Starting MedicinalPlantsApiApplication using Java 21.0.8 with PID 28780 (C:\Users\kader\medicinal-plants-api\target\classes started by kader in C:\Users\kader\medicinal-plants-api)
+2025-10-17 10:40:40 DEBUG [main] c.d.m.MedicinalPlantsApiApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-10-17 10:40:40 INFO  [main] c.d.m.MedicinalPlantsApiApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-17 10:40:40 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-17 10:40:41 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2025-10-17 10:40:41 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-10-17 10:40:41 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-17 10:40:41 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-17 10:40:41 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-10-17 10:40:41 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-17 10:40:41 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1144 ms
+2025-10-17 10:40:41 DEBUG [main] o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2025-10-17 10:40:41 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-17 10:40:41 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@39f0c343
+2025-10-17 10:40:41 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-17 10:40:41 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-17 10:40:41 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-10-17 10:40:41 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-17 10:40:41 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-17 10:40:42 WARN  [main] org.hibernate.dialect.Dialect - HHH000511: The 9.1.0 version for [org.hibernate.dialect.MariaDBDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 10.4.0. Check the community dialects project for available legacy versions.
+2025-10-17 10:40:42 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-17 10:40:42 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-17 10:40:42 DEBUG [main] org.hibernate.SQL - 
+    create sequence users_seq start with 1 increment by 50 nocache
+2025-10-17 10:40:42 WARN  [main] o.m.jdbc.message.server.ErrorPacket - Error: 1064-42000: Erreur de syntaxe près de 'sequence users_seq start with 1 increment by 50 nocache' à la ligne 1
+2025-10-17 10:40:42 WARN  [main] o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create sequence users_seq start with 1 increment by 50 nocache" via JDBC [(conn=8) Erreur de syntaxe près de 'sequence users_seq start with 1 increment by 50 nocache' à la ligne 1]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create sequence users_seq start with 1 increment by 50 nocache" via JDBC [(conn=8) Erreur de syntaxe près de 'sequence users_seq start with 1 increment by 50 nocache' à la ligne 1]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySequence(AbstractSchemaMigrator.java:298)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:253)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.devfullstack.medicinal_plants_api.MedicinalPlantsApiApplication.main(MedicinalPlantsApiApplication.java:14)
+Caused by: java.sql.SQLSyntaxErrorException: (conn=8) Erreur de syntaxe près de 'sequence users_seq start with 1 increment by 50 nocache' à la ligne 1
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:289)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:378)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:172)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:915)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:854)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:773)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:697)
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:1035)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1165)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:493)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 37 common frames omitted
+2025-10-17 10:40:42 DEBUG [main] org.hibernate.SQL - 
+    alter table user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users (id)
+2025-10-17 10:40:42 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-17 10:40:43 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-17 10:40:43 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 22 mappings in 'requestMappingHandlerMapping'
+2025-10-17 10:40:43 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-10-17 10:40:43 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a8149f6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@672549f3, org.springframework.security.web.context.SecurityContextHolderFilter@2c3f81ef, org.springframework.security.web.header.HeaderWriterFilter@709c6768, org.springframework.web.filter.CorsFilter@4791d904, org.springframework.security.web.csrf.CsrfFilter@76685ab0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@60cbba57, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@712dd0b0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b3284, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ba516ff, org.springframework.security.web.session.SessionManagementFilter@403b7be3, org.springframework.security.web.access.ExceptionTranslationFilter@5924ea91, org.springframework.security.web.access.intercept.AuthorizationFilter@2f403d0a]
+2025-10-17 10:40:43 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-10-17 10:40:43 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-10-17 10:40:43 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-10-17 10:40:43 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-10-17 10:40:43 INFO  [main] c.d.m.MedicinalPlantsApiApplication - Started MedicinalPlantsApiApplication in 3.965 seconds (process running for 4.599)
+2025-10-17 10:40:44 DEBUG [main] org.hibernate.SQL - 
+    select
+        count(*) 
+    from
+        plant p1_0
+2025-10-17 10:41:31 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-17 10:41:31 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@218c6d3e
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7f6137fb
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-10-17 10:41:31 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.description,
@@ -78,65 +122,12 @@
         p1_0.season_found 
     from
         plant p1_0
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
-2025-10-13 14:07:51 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=1, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connue (truncated)...]
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Oct 13 14:07:52 CEST 2025, status=404, error=Not Found, path=/favicon.ico}]
-2025-10-13 14:07:52 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui.html", parameters={}
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc#redirectToUi(HttpServletRequest)
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-3] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css", parameters={}
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-5] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.css", parameters={}
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-6] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - GET "/api-docs/swagger-config", parameters={}
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-redir (truncated)...]
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - GET "/api-docs", parameters={}
-2025-10-13 14:08:05 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
-2025-10-13 14:08:06 INFO  [http-nio-8080-exec-1] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 441 ms
-2025-10-13 14:08:06 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
-2025-10-13 14:08:06 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
-2025-10-13 14:08:06 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:12:11 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - GET "/api-doc", parameters={}
-2025-10-13 14:12:11 DEBUG [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-10-13 14:12:11 DEBUG [http-nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
-2025-10-13 14:12:11 DEBUG [http-nio-8080-exec-7] o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api-doc.]
-2025-10-13 14:12:11 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
-2025-10-13 14:12:11 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
-2025-10-13 14:12:11 DEBUG [http-nio-8080-exec-7] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
-2025-10-13 14:12:11 DEBUG [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, text/html;q=0.8]
-2025-10-13 14:12:11 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
-2025-10-13 14:12:55 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
-2025-10-13 14:12:55 DEBUG [http-nio-8080-exec-9] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
-2025-10-13 14:12:55 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - 
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=88, name=Romarin, origin=Bassin méditerranéen, description=Stimulant circulatoi (truncated)...]
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.description,
@@ -146,132 +137,183 @@
         p1_0.season_found 
     from
         plant p1_0
-2025-10-13 14:12:55 DEBUG [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:12:55 DEBUG [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=1, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connue (truncated)...]
-2025-10-13 14:12:55 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:13:13 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - GET "/api/plants/id/8", parameters={}
-2025-10-13 14:13:13 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getById(Long)
-2025-10-13 14:13:13 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=88, name=Romarin, origin=Bassin méditerranéen, description=Stimulant circulatoi (truncated)...]
+2025-10-17 10:41:31 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:43:27 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-17 10:43:27 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-17 10:43:27 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-17 10:43:29 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-10-17 10:43:29 INFO  [main] c.d.m.MedicinalPlantsApiApplication - Starting MedicinalPlantsApiApplication using Java 21.0.8 with PID 19248 (C:\Users\kader\medicinal-plants-api\target\classes started by kader in C:\Users\kader\medicinal-plants-api)
+2025-10-17 10:43:29 DEBUG [main] c.d.m.MedicinalPlantsApiApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-10-17 10:43:29 INFO  [main] c.d.m.MedicinalPlantsApiApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-17 10:43:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-17 10:43:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2025-10-17 10:43:30 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-10-17 10:43:30 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-17 10:43:30 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-17 10:43:30 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-10-17 10:43:30 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-17 10:43:30 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1075 ms
+2025-10-17 10:43:30 DEBUG [main] o.s.web.filter.CorsFilter - Filter 'corsFilter' configured for use
+2025-10-17 10:43:31 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-17 10:43:31 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@7ea71fc2
+2025-10-17 10:43:31 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-17 10:43:31 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-17 10:43:31 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-10-17 10:43:31 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-10-17 10:43:31 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-17 10:43:31 WARN  [main] org.hibernate.dialect.Dialect - HHH000511: The 9.1.0 version for [org.hibernate.dialect.MariaDBDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 10.4.0. Check the community dialects project for available legacy versions.
+2025-10-17 10:43:31 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-17 10:43:32 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-17 10:43:32 DEBUG [main] org.hibernate.SQL - 
+    create sequence users_seq start with 1 increment by 50 nocache
+2025-10-17 10:43:32 WARN  [main] o.m.jdbc.message.server.ErrorPacket - Error: 1064-42000: Erreur de syntaxe près de 'sequence users_seq start with 1 increment by 50 nocache' à la ligne 1
+2025-10-17 10:43:32 WARN  [main] o.h.t.s.i.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+    create sequence users_seq start with 1 increment by 50 nocache" via JDBC [(conn=86) Erreur de syntaxe près de 'sequence users_seq start with 1 increment by 50 nocache' à la ligne 1]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create sequence users_seq start with 1 increment by 50 nocache" via JDBC [(conn=86) Erreur de syntaxe près de 'sequence users_seq start with 1 increment by 50 nocache' à la ligne 1]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySequence(AbstractSchemaMigrator.java:298)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:253)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.devfullstack.medicinal_plants_api.MedicinalPlantsApiApplication.main(MedicinalPlantsApiApplication.java:14)
+Caused by: java.sql.SQLSyntaxErrorException: (conn=86) Erreur de syntaxe près de 'sequence users_seq start with 1 increment by 50 nocache' à la ligne 1
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:289)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:378)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:172)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:915)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:854)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:773)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:697)
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:1035)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1165)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:493)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 37 common frames omitted
+2025-10-17 10:43:32 DEBUG [main] org.hibernate.SQL - 
+    alter table user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users (id)
+2025-10-17 10:43:32 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-17 10:43:32 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-17 10:43:32 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 22 mappings in 'requestMappingHandlerMapping'
+2025-10-17 10:43:32 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-10-17 10:43:32 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@167ccc3c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@292b7a02, org.springframework.security.web.context.SecurityContextHolderFilter@726d0482, org.springframework.security.web.header.HeaderWriterFilter@2e2a2b07, org.springframework.web.filter.CorsFilter@3e242137, org.springframework.security.web.csrf.CsrfFilter@73bd146c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@52cda4bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f403d0a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@186fc6e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25dacc5a, org.springframework.security.web.session.SessionManagementFilter@e1d2781, org.springframework.security.web.access.ExceptionTranslationFilter@78d49939, org.springframework.security.web.access.intercept.AuthorizationFilter@4791d904]
+2025-10-17 10:43:32 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-10-17 10:43:32 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-10-17 10:43:32 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-10-17 10:43:32 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-10-17 10:43:32 INFO  [main] c.d.m.MedicinalPlantsApiApplication - Started MedicinalPlantsApiApplication in 3.556 seconds (process running for 4.262)
+2025-10-17 10:43:33 DEBUG [main] org.hibernate.SQL - 
     select
-        p1_0.id,
-        p1_0.description,
-        p1_0.image_url,
-        p1_0.name,
-        p1_0.origin,
-        p1_0.season_found 
-    from
-        plant p1_0 
-    where
-        p1_0.id=?
-2025-10-13 14:13:13 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:13:13 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [PlantResponseDTO(id=8, name=Romarin, origin=Bassin méditerranéen, description=Stimulant circulatoire (truncated)...]
-2025-10-13 14:13:13 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:16:06 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - PUT "/api/plants/id/5", parameters={}
-2025-10-13 14:16:06 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#update(Long, PlantDTO)
-2025-10-13 14:16:06 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [PlantDTO(name=tEA-Tree, origin=string, description=string, seasonFound=string, imageUrl=string)]
-2025-10-13 14:16:06 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.devfullstack.medicinal_plants_api.exception.GlobalExceptionHandler#handleValidationErrors(MethodArgumentNotValidException)
-2025-10-13 14:16:06 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:16:06 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{imageUrl=L'URL de l'image doit être valide}]
-2025-10-13 14:16:06 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public org.springframework.http.ResponseEntity<com.devfullstack.medicinal_plants_api.dto.PlantResponseDTO> com.devfullstack.medicinal_plants_api.controller.PlantController.update(java.lang.Long,com.devfullstack.medicinal_plants_api.dto.PlantDTO): [Field error in object 'plantDTO' on field 'imageUrl': rejected value [string]; codes [URL.plantDTO.imageUrl,URL.imageUrl,URL.java.lang.String,URL]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [plantDTO.imageUrl,imageUrl]; arguments []; default message [imageUrl],[Ljakarta.validation.constraints.Pattern$Flag;@1743c616,,-1,,.*]; default message [L'URL de l'image doit être valide]] ]
-2025-10-13 14:16:06 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
-2025-10-13 14:18:03 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - PUT "/api/plants/id/5", parameters={}
-2025-10-13 14:18:03 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#update(Long, PlantDTO)
-2025-10-13 14:18:03 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [PlantDTO(name=TEA-Tree, origin=Europe du Sud, description=Antiseptique naturel utilisé contre les in (truncated)...]
-2025-10-13 14:18:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
-    select
-        p1_0.id,
-        p1_0.description,
-        p1_0.image_url,
-        p1_0.name,
-        p1_0.origin,
-        p1_0.season_found 
-    from
-        plant p1_0 
-    where
-        p1_0.id=?
-2025-10-13 14:18:03 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
-    update
-        plant 
-    set
-        description=?,
-        image_url=?,
-        name=?,
-        origin=?,
-        season_found=? 
-    where
-        id=?
-2025-10-13 14:18:03 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:18:03 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [PlantResponseDTO(id=5, name=TEA-Tree, origin=Europe du Sud, description=Antiseptique naturel utilisé (truncated)...]
-2025-10-13 14:18:03 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:18:13 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
-2025-10-13 14:18:13 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
-2025-10-13 14:18:13 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
-    select
-        p1_0.id,
-        p1_0.description,
-        p1_0.image_url,
-        p1_0.name,
-        p1_0.origin,
-        p1_0.season_found 
+        count(*) 
     from
         plant p1_0
-2025-10-13 14:18:13 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
-2025-10-13 14:18:13 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=1, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connue (truncated)...]
-2025-10-13 14:18:13 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:18:49 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - DELETE "/api/plants/id/1", parameters={}
-2025-10-13 14:18:49 DEBUG [http-nio-8080-exec-5] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#delete(Long)
-2025-10-13 14:18:49 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
-    select
-        p1_0.id,
-        p1_0.description,
-        p1_0.image_url,
-        p1_0.name,
-        p1_0.origin,
-        p1_0.season_found 
-    from
-        plant p1_0 
-    where
-        p1_0.id=?
-2025-10-13 14:18:49 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
-    delete 
-    from
-        plant 
-    where
-        id=?
-2025-10-13 14:18:49 DEBUG [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:18:49 DEBUG [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
-2025-10-13 14:18:49 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - Completed 204 NO_CONTENT
-2025-10-13 14:19:11 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
-2025-10-13 14:19:11 DEBUG [http-nio-8080-exec-6] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
-2025-10-13 14:19:11 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - 
-    select
-        p1_0.id,
-        p1_0.description,
-        p1_0.image_url,
-        p1_0.name,
-        p1_0.origin,
-        p1_0.season_found 
-    from
-        plant p1_0
-2025-10-13 14:19:11 DEBUG [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:19:11 DEBUG [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=2, name=Camomille, origin=Europe, description=Utilisée pour ses effets calmants (truncated)...]
-2025-10-13 14:19:11 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:22:03 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - POST "/api/plants", parameters={}
-2025-10-13 14:22:03 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#createPlant(PlantDTO)
-2025-10-13 14:22:03 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [PlantDTO(name=Eucalyptus citroné, origin=Maroc, description=C'est un anti-imflamatoire, seasonFound= (truncated)...]
-2025-10-13 14:22:03 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL - 
+2025-10-17 10:43:33 DEBUG [main] org.hibernate.SQL - 
     insert 
     into
         plant
-        (description, image_url, name, origin, season_found, id) 
+        (description, image_url, name, origin, season_found) 
     values
-        (?, ?, ?, ?, ?, default)
-2025-10-13 14:22:03 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:22:03 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [PlantResponseDTO(id=9, name=Eucalyptus citroné, origin=Maroc, description=C'est un anti-imflamatoire (truncated)...]
-2025-10-13 14:22:03 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
-2025-10-13 14:22:18 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
-2025-10-13 14:22:18 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
-2025-10-13 14:22:18 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+        (?, ?, ?, ?, ?)
+2025-10-17 10:43:33 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        plant
+        (description, image_url, name, origin, season_found) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-17 10:43:33 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        plant
+        (description, image_url, name, origin, season_found) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-17 10:43:33 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        plant
+        (description, image_url, name, origin, season_found) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-17 10:43:33 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        plant
+        (description, image_url, name, origin, season_found) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-17 10:43:33 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        plant
+        (description, image_url, name, origin, season_found) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-17 10:43:33 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        plant
+        (description, image_url, name, origin, season_found) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-17 10:43:33 DEBUG [main] org.hibernate.SQL - 
+    insert 
+    into
+        plant
+        (description, image_url, name, origin, season_found) 
+    values
+        (?, ?, ?, ?, ?)
+2025-10-17 10:43:43 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-17 10:43:43 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-17 10:43:43 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-10-17 10:43:43 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-10-17 10:43:43 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-10-17 10:43:43 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@27ea7c8f
+2025-10-17 10:43:43 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@11ec699
+2025-10-17 10:43:43 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-10-17 10:43:43 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-10-17 10:43:43 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:43:43 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.description,
@@ -281,12 +323,12 @@
         p1_0.season_found 
     from
         plant p1_0
-2025-10-13 14:22:18 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
-2025-10-13 14:22:18 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=2, name=Camomille, origin=Europe, description=Utilisée pour ses effets calmants (truncated)...]
-2025-10-13 14:22:18 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:22:54 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - GET "/api/plants/season/Printemps", parameters={}
-2025-10-13 14:22:54 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getBySeason(String)
-2025-10-13 14:22:54 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.description,
@@ -295,15 +337,17 @@
         p1_0.origin,
         p1_0.season_found 
     from
-        plant p1_0 
-    where
-        p1_0.season_found=?
-2025-10-13 14:22:54 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:22:54 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=2, name=Camomille, origin=Europe, description=Utilisée pour ses effets calmants (truncated)...]
-2025-10-13 14:22:54 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - GET "/api/plants/search?name=Menthe", parameters={masked}
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getByName(String)
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+        plant p1_0
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:43:44 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - GET "/api/images", parameters={}
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.ImageController#getAllImages()
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.devfullstack.medicinal_plants_api.dto.ImageDTO@2b6e4e2b, com.devfullstack.medicinal_plants_api. (truncated)...]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.description,
@@ -312,19 +356,19 @@
         p1_0.origin,
         p1_0.season_found 
     from
-        plant p1_0 
-    where
-        p1_0.name=?
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.a.ResponseStatusExceptionResolver - Resolved [org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND "Plante non trouvée"]
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error?name=Menthe", parameters={masked}
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Oct 13 14:23:17 CEST 2025, status=404, error=Not Found, path=/api/plants/search}]
-2025-10-13 14:23:17 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
-2025-10-13 14:23:41 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - GET "/api/plants/search?name=Camomille", parameters={masked}
-2025-10-13 14:23:41 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getByName(String)
-2025-10-13 14:23:41 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+        plant p1_0
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - GET "/api/images", parameters={}
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-5] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.ImageController#getAllImages()
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-5] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-5] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.devfullstack.medicinal_plants_api.dto.ImageDTO@9dbda2e, com.devfullstack.medicinal_plants_api.d (truncated)...]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-6] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.description,
@@ -333,159 +377,319 @@
         p1_0.origin,
         p1_0.season_found 
     from
-        plant p1_0 
+        plant p1_0
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - GET "/api/images", parameters={}
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-7] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.ImageController#getAllImages()
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-7] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-7] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.devfullstack.medicinal_plants_api.dto.ImageDTO@e56247, com.devfullstack.medicinal_plants_api.dt (truncated)...]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - GET "/api/images", parameters={}
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-9] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.ImageController#getAllImages()
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-9] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-9] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.devfullstack.medicinal_plants_api.dto.ImageDTO@50e57995, com.devfullstack.medicinal_plants_api. (truncated)...]
+2025-10-17 10:43:53 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.description,
+        p1_0.image_url,
+        p1_0.name,
+        p1_0.origin,
+        p1_0.season_found 
+    from
+        plant p1_0
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.description,
+        p1_0.image_url,
+        p1_0.name,
+        p1_0.origin,
+        p1_0.season_found 
+    from
+        plant p1_0
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:44:00 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.description,
+        p1_0.image_url,
+        p1_0.name,
+        p1_0.origin,
+        p1_0.season_found 
+    from
+        plant p1_0
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.description,
+        p1_0.image_url,
+        p1_0.name,
+        p1_0.origin,
+        p1_0.season_found 
+    from
+        plant p1_0
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:45:06 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:21 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:45:21 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:45:21 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.description,
+        p1_0.image_url,
+        p1_0.name,
+        p1_0.origin,
+        p1_0.season_found 
+    from
+        plant p1_0
+2025-10-17 10:45:21 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2025-10-17 10:45:21 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:45:21 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:49 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui.html", parameters={}
+2025-10-17 10:45:49 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc#redirectToUi(HttpServletRequest)
+2025-10-17 10:45:49 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2025-10-17 10:45:49 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Nothing to write: null body
+2025-10-17 10:45:49 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
     where
-        p1_0.name=?
-2025-10-13 14:23:41 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:23:41 DEBUG [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [PlantResponseDTO(id=2, name=Camomille, origin=Europe, description=Utilisée pour ses effets calmants  (truncated)...]
-2025-10-13 14:23:41 DEBUG [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:25:39 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - GET "/api-docs", parameters={}
-2025-10-13 14:25:39 DEBUG [http-nio-8080-exec-6] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
-2025-10-13 14:25:39 DEBUG [http-nio-8080-exec-6] o.s.api.AbstractOpenApiResource - Fetching openApi document from cache
-2025-10-13 14:25:39 DEBUG [http-nio-8080-exec-6] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json]
-2025-10-13 14:25:39 DEBUG [http-nio-8080-exec-6] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
-2025-10-13 14:25:39 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:33:35 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2025-10-13 14:33:35 INFO  [main] c.d.m.controller.PlantControllerTest - Starting PlantControllerTest using Java 21.0.8 with PID 23848 (started by kader in C:\Users\kader\medicinal-plants-api)
-2025-10-13 14:33:35 DEBUG [main] c.d.m.controller.PlantControllerTest - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-10-13 14:33:35 INFO  [main] c.d.m.controller.PlantControllerTest - No active profile set, falling back to 1 default profile: "default"
-2025-10-13 14:33:35 DEBUG [main] o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@43cf6ea3
-2025-10-13 14:33:38 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 9 mappings in 'requestMappingHandlerMapping'
-2025-10-13 14:33:38 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-10-13 14:33:39 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-10-13 14:33:39 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-10-13 14:33:39 INFO  [main] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-2025-10-13 14:33:39 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
-2025-10-13 14:33:39 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
-2025-10-13 14:33:39 INFO  [main] c.d.m.controller.PlantControllerTest - Started PlantControllerTest in 3.994 seconds (process running for 5.038)
-2025-10-13 14:33:39 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-10-13 14:33:39 DEBUG [main] o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
-2025-10-13 14:33:39 DEBUG [main] o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource plants.]
-2025-10-13 14:33:39 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.devfullstack.medicinal_plants_api.MedicinalPlantsApiApplicationTests]: MedicinalPlantsApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-10-13 14:33:39 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.devfullstack.medicinal_plants_api.MedicinalPlantsApiApplication for test class com.devfullstack.medicinal_plants_api.MedicinalPlantsApiApplicationTests
-2025-10-13 14:33:39 INFO  [main] c.d.m.MedicinalPlantsApiApplicationTests - Starting MedicinalPlantsApiApplicationTests using Java 21.0.8 with PID 23848 (started by kader in C:\Users\kader\medicinal-plants-api)
-2025-10-13 14:33:39 DEBUG [main] c.d.m.MedicinalPlantsApiApplicationTests - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-10-13 14:33:39 INFO  [main] c.d.m.MedicinalPlantsApiApplicationTests - No active profile set, falling back to 1 default profile: "default"
-2025-10-13 14:33:39 DEBUG [main] o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@66b6873f
-2025-10-13 14:33:40 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-13 14:33:40 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 1 JPA repository interface.
-2025-10-13 14:33:41 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-10-13 14:33:41 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:medicinaldb user=SA
-2025-10-13 14:33:41 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-10-13 14:33:41 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-13 14:33:41 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-10-13 14:33:42 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-10-13 14:33:42 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-13 14:33:42 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-10-13 14:33:43 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-13 14:33:43 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-13 14:33:43 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-13 14:33:43 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 13 mappings in 'requestMappingHandlerMapping'
-2025-10-13 14:33:43 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2025-10-13 14:33:43 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-10-13 14:33:43 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-10-13 14:33:44 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:medicinaldb'
-2025-10-13 14:33:44 INFO  [main] c.d.m.MedicinalPlantsApiApplicationTests - Started MedicinalPlantsApiApplicationTests in 4.415 seconds (process running for 9.941)
-2025-10-13 14:33:44 DEBUG [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@43cf6ea3, started on Mon Oct 13 14:33:35 CEST 2025
-2025-10-13 14:33:44 DEBUG [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@66b6873f, started on Mon Oct 13 14:33:39 CEST 2025
-2025-10-13 14:33:44 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-13 14:33:44 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-10-13 14:33:44 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-10-13 14:37:45 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2025-10-13 14:37:45 INFO  [main] c.d.m.controller.PlantControllerTest - Starting PlantControllerTest using Java 21.0.8 with PID 8588 (started by kader in C:\Users\kader\medicinal-plants-api)
-2025-10-13 14:37:45 DEBUG [main] c.d.m.controller.PlantControllerTest - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-10-13 14:37:45 INFO  [main] c.d.m.controller.PlantControllerTest - No active profile set, falling back to 1 default profile: "default"
-2025-10-13 14:37:46 DEBUG [main] o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@43cf6ea3
-2025-10-13 14:37:48 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 9 mappings in 'requestMappingHandlerMapping'
-2025-10-13 14:37:48 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-10-13 14:37:49 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-10-13 14:37:49 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-10-13 14:37:49 INFO  [main] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-2025-10-13 14:37:49 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
-2025-10-13 14:37:49 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
-2025-10-13 14:37:49 INFO  [main] c.d.m.controller.PlantControllerTest - Started PlantControllerTest in 3.893 seconds (process running for 4.939)
-2025-10-13 14:37:49 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
-2025-10-13 14:37:49 DEBUG [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-13 14:37:49 DEBUG [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=1, name=Menthe, origin=Plante digestive, description=https://image.com/menthe.j (truncated)...]
-2025-10-13 14:37:50 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.devfullstack.medicinal_plants_api.MedicinalPlantsApiApplicationTests]: MedicinalPlantsApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-10-13 14:37:50 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.devfullstack.medicinal_plants_api.MedicinalPlantsApiApplication for test class com.devfullstack.medicinal_plants_api.MedicinalPlantsApiApplicationTests
-2025-10-13 14:37:50 INFO  [main] c.d.m.MedicinalPlantsApiApplicationTests - Starting MedicinalPlantsApiApplicationTests using Java 21.0.8 with PID 8588 (started by kader in C:\Users\kader\medicinal-plants-api)
-2025-10-13 14:37:50 DEBUG [main] c.d.m.MedicinalPlantsApiApplicationTests - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-10-13 14:37:50 INFO  [main] c.d.m.MedicinalPlantsApiApplicationTests - No active profile set, falling back to 1 default profile: "default"
-2025-10-13 14:37:50 DEBUG [main] o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7a3c99f1
-2025-10-13 14:37:51 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-13 14:37:51 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 1 JPA repository interface.
-2025-10-13 14:37:51 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-10-13 14:37:51 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:medicinaldb user=SA
-2025-10-13 14:37:51 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-10-13 14:37:52 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-13 14:37:52 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-10-13 14:37:52 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-10-13 14:37:52 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-13 14:37:52 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-10-13 14:37:53 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-13 14:37:53 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-13 14:37:53 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-13 14:37:53 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 13 mappings in 'requestMappingHandlerMapping'
-2025-10-13 14:37:53 DEBUG [main] o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2025-10-13 14:37:53 DEBUG [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-10-13 14:37:53 DEBUG [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-10-13 14:37:54 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:medicinaldb'
-2025-10-13 14:37:54 INFO  [main] c.d.m.MedicinalPlantsApiApplicationTests - Started MedicinalPlantsApiApplicationTests in 4.18 seconds (process running for 9.796)
-2025-10-13 14:37:54 DEBUG [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@43cf6ea3, started on Mon Oct 13 14:37:46 CEST 2025
-2025-10-13 14:37:54 DEBUG [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@7a3c99f1, started on Mon Oct 13 14:37:50 CEST 2025
-2025-10-13 14:37:54 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-13 14:37:54 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-10-13 14:37:54 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - GET "/api-docs/swagger-config", parameters={}
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-redir (truncated)...]
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/favicon-32x32.png", parameters={}
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-4] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - GET "/api-docs", parameters={}
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-3] o.s.api.AbstractOpenApiResource - Fetching openApi document from cache
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-3] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
-2025-10-13 14:52:12 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-6] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui.css", parameters={}
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.css", parameters={}
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-1] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-8] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-10] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - GET "/api-docs/swagger-config", parameters={}
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-redir (truncated)...]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/favicon-32x32.png", parameters={}
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-3] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - GET "/api-docs", parameters={}
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-5] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-5] o.s.api.AbstractOpenApiResource - Fetching openApi document from cache
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-5] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-5] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
-2025-10-13 17:43:26 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+        u1_0.username=?
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/index.html", parameters={}
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-5] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-7] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-6] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-9] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-10-17 10:45:51 DEBUG [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - GET "/api-docs/swagger-config", parameters={}
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json]
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-10] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{configUrl=/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-redir (truncated)...]
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - GET "/api-docs", parameters={}
+2025-10-17 10:45:52 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-10-17 10:45:53 INFO  [http-nio-8080-exec-1] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 680 ms
+2025-10-17 10:45:53 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, */*] and supported [application/json]
+2025-10-17 10:45:53 DEBUG [http-nio-8080-exec-1] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-10-17 10:45:53 DEBUG [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:45:55 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-17 10:45:55 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:45:56 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - GET "/swagger-ui/swagger-initializer.js", parameters={}
+2025-10-17 10:45:56 DEBUG [http-nio-8080-exec-3] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-10-17 10:45:56 DEBUG [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:46:02 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-17 10:46:02 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:46:03 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - GET "/api/plants", parameters={}
+2025-10-17 10:46:03 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.PlantController#getAll()
+2025-10-17 10:46:03 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.description,
+        p1_0.image_url,
+        p1_0.name,
+        p1_0.origin,
+        p1_0.season_found 
+    from
+        plant p1_0
+2025-10-17 10:46:03 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-17 10:46:03 DEBUG [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[PlantResponseDTO(id=89, name=Aloe Vera, origin=Afrique du Nord, description=Plante médicinale connu (truncated)...]
+2025-10-17 10:46:03 DEBUG [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - GET "/users", parameters={}
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.devfullstack.medicinal_plants_api.controller.UserController#getAllUsers()
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[User(id=1, username=admin, password=$2a$10$lekeRud50eE2tqLwW9nED.fPoyAQ2uIy04YJZkuflGAovEWPs2/T2, r (truncated)...]
+2025-10-17 10:46:13 DEBUG [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet - Completed 200 OK

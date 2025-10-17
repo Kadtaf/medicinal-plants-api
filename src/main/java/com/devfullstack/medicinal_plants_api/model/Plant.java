@@ -26,4 +26,13 @@ public class Plant {
     private String seasonFound;
 
     private String imageUrl;
+
+    public Plant(String name, String origin, String description, String seasonFound, String imageUrl) {
+        this.name = name;
+        this.origin = origin;
+        this.description = description;
+        this.seasonFound = seasonFound;
+        this.imageUrl = imageUrl;
+    }
+
 }

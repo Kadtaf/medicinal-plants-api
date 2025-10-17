@@ -8,16 +8,19 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/plants")
 public class PlantController {
 
     @Autowired
     private PlantService service;
+
 
     @GetMapping
     public ResponseEntity<List<PlantResponseDTO>> getAll() {
@@ -31,18 +34,21 @@ public class PlantController {
         return ResponseEntity.ok(service.convertToResponseDTO(plant));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<PlantResponseDTO> createPlant(@Valid @RequestBody PlantDTO dto) {
         Plant saved = service.createPlant(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(service.convertToResponseDTO(saved));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/id/{id}")
     public ResponseEntity<PlantResponseDTO> update(@PathVariable Long id, @Valid @RequestBody PlantDTO dto) {
         Plant updated = service.updatePlant(id, dto);
         return ResponseEntity.ok(service.convertToResponseDTO(updated));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/id/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.deletePlant(id);
@@ -60,4 +66,6 @@ public class PlantController {
         Plant plant = service.getPlantByName(name);
         return ResponseEntity.ok(service.convertToResponseDTO(plant));
     }
+
+
 }
