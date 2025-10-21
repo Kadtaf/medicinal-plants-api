@@ -1,13 +1,10 @@
 package com.devfullstack.medicinal_plants_api.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,16 +17,25 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "Le nom d'utilisateur est obligatoire")
+    @Column(unique = true)
     private String username;
 
-    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).+$",
-            message = "Le mot de passe doit contenir une majuscule, une minuscule et un chiffre")
-    @Size(min = 8, max = 12, message = "Le mot de passe doit contenir au moins 8 caractères")
+    @Email(message = "L'adresse e-mail doit être valide")
+    @NotBlank(message = "L'email est obligatoire")
+    @Column(unique = true)
+    private String email;
+
+    @Pattern(
+            regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).+$",
+            message = "Le mot de passe doit contenir une majuscule, une minuscule et un chiffre"
+    )
+    @Size(min = 6, max = 100, message = "Le mot de passe doit contenir entre 8 et 12 caractères")
     @NotBlank(message = "Le mot de passe est obligatoire")
+    @Column(length = 100)
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)

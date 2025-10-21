@@ -1,3 +1,4 @@
+-- 🌿 Table des plantes
 CREATE TABLE IF NOT EXISTS plant (
                                      ID BIGINT AUTO_INCREMENT PRIMARY KEY,
                                      NAME VARCHAR(255),
@@ -5,9 +6,9 @@ CREATE TABLE IF NOT EXISTS plant (
                                      DESCRIPTION VARCHAR(255),
                                      SEASON_FOUND VARCHAR(255),
                                      IMAGE_URL VARCHAR(255)
-
 );
 
+-- 🌱 Données pour les plantes
 INSERT INTO plant (name, origin, description, season_found, image_url) VALUES
                                                                            ('Aloe Vera', 'Afrique du Nord', 'Plante médicinale connue pour ses propriétés cicatrisantes et hydratantes.', 'Été', 'https://cdn.pixabay.com/photo/2017/08/10/14/40/aloe-vera-2623317_1280.jpg'),
                                                                            ('Camomille', 'Europe', 'Utilisée pour ses effets calmants et digestifs, souvent en infusion.', 'Printemps', 'https://cdn.pixabay.com/photo/2024/05/15/07/59/flowers-8763039_1280.jpg'),
@@ -18,16 +19,15 @@ INSERT INTO plant (name, origin, description, season_found, image_url) VALUES
                                                                            ('Eucalyptus', 'Australie', 'Plante expectorante utilisée pour dégager les voies respiratoires.', 'Hiver', 'https://cdn.pixabay.com/photo/2017/09/03/17/33/eucalyptus-2711285_1280.jpg'),
                                                                            ('Romarin', 'Bassin méditerranéen', 'Stimulant circulatoire et tonique digestif.', 'Printemps', 'https://cdn.pixabay.com/photo/2020/06/04/14/52/rosemary-5259098_1280.jpg');
 
--- ✅ Table 'users'
+-- 👤 Table des utilisateurs (avec email)
 CREATE TABLE IF NOT EXISTS users (
                                      id BIGINT AUTO_INCREMENT PRIMARY KEY,
                                      username VARCHAR(255) NOT NULL UNIQUE,
+                                     email VARCHAR(255) NOT NULL UNIQUE,
                                      password VARCHAR(255) NOT NULL
-)CHARACTER SET utf8 COLLATE utf8_general_ci;
+) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-
-
--- ✅ Table 'user_roles'
+-- 👑 Table des rôles
 CREATE TABLE IF NOT EXISTS user_roles (
                                           id BIGINT PRIMARY KEY AUTO_INCREMENT,
                                           user_id BIGINT NOT NULL,
@@ -36,5 +36,13 @@ CREATE TABLE IF NOT EXISTS user_roles (
 );
 
 
+-- 👤 Insertion d'un utilisateur admin par défaut
+-- 🔐 Mot de passe bcrypté pour "admin123"
+INSERT INTO users (username, email, password)
+SELECT 'admin', 'admin@example.com', '$2a$10$UlvSyK4BH3RG2yn5re6r0e1F86Zdm8yKMvlNiNnn2acNjRsg8/KSi'
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE username = 'admin');
 
 
+-- 👑 Attribution du rôle ADMIN
+INSERT INTO user_roles (user_id, roles)
+VALUES (1, 'ROLE_ADMIN');

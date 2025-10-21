@@ -6,4 +6,4 @@ const authApi = axios.create({
 });
 
 export const login = (credentials) =>
-    authApi.post('/login', credentials, { withCredentials: true });
+    authApi.post('/login', credentials, { headers: { "Content-Type": "application/json" } });

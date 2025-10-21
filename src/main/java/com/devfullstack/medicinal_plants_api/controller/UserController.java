@@ -1,84 +1,69 @@
 package com.devfullstack.medicinal_plants_api.controller;
 
-import com.devfullstack.medicinal_plants_api.dto.LoginRequest;
 import com.devfullstack.medicinal_plants_api.model.User;
 import com.devfullstack.medicinal_plants_api.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 
-
-    public final UserService userService;
-
-    private final AuthenticationManager authenticationManager;
-
+    private final UserService userService;
     private final PasswordEncoder passwordEncoder;
 
-
-    public UserController(UserService userService, AuthenticationManager authenticationManager, PasswordEncoder passwordEncoder) {
+    public UserController(UserService userService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
-        this.authenticationManager = authenticationManager;
         this.passwordEncoder = passwordEncoder;
     }
 
+    // 🧩 Liste de tous les utilisateurs → ADMIN uniquement
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
+    // 🧩 Récupérer un utilisateur par ID → ADMIN uniquement
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id){
+    public User getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
     }
 
-    @GetMapping("/{username}")
-    public User getUserByUsername(@PathVariable String username){
+    // 🧩 Rechercher un utilisateur par username → ADMIN uniquement
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/by-username/{username}")
+    public User getUserByUsername(@PathVariable String username) {
         return userService.getUserByUsername(username);
     }
 
+    // 🧩 Créer un nouvel utilisateur → ADMIN uniquement
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
-    public User createUser(@Valid @RequestBody User user){
+    public User createUser(@Valid @RequestBody User user) {
+
         return userService.createUser(user);
     }
 
+    // 🧩 Modifier un utilisateur → ADMIN uniquement
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @Valid @RequestBody User user) {
-        User updatedUser = userService.updateUser(id, user);
-        return ResponseEntity.ok(updatedUser);
+        return ResponseEntity.ok(userService.updateUser(id, user));
     }
 
+    // 🧩 Supprimer un utilisateur → ADMIN uniquement
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id){
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
-
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@Valid @RequestBody LoginRequest request) {
-        if (userService.existsByUsername(request.getUsername())) {
-            return ResponseEntity.badRequest().body("Nom d'utilisateur déjà pris ❌");
-        }
-
-        User user = new User();
-        user.setUsername(request.getUsername());
-        user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setRoles(request.getRoles() != null ? request.getRoles() : Set.of("USER"));
-
-        userService.createUser(user);
-        return ResponseEntity.ok("Utilisateur créé avec succès ✅");
-    }
-
-
 }

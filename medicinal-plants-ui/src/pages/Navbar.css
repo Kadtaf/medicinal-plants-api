@@ -1,0 +1,101 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #2e7d32;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-logo a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: white;
+    color: #2e7d32;
+}
+
+.login-button {
+    border-color: #81c784;
+}
+
+.logout-button {
+    border-color: #ef5350;
+}
+
+/* 🔹 Lien admin */
+.admin-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: #007bff;
+    transition: color 0.2s ease;
+}
+
+.admin-link:hover {
+    color: #0056b3;
+}
+
+/* 🔹 Boutons connexion / déconnexion */
+.nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.login-btn {
+    color: #28a745;
+}
+
+.logout-btn {
+    color: #dc3545;
+}
+
+.login-btn:hover {
+    color: #1e7e34;
+}
+
+.logout-btn:hover {
+    color: #b52d3a;
+}

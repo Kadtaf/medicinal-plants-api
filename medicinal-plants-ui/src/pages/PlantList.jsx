@@ -1,76 +1,107 @@
+// src/components/PlantList.jsx
 import React, { useEffect, useState } from 'react';
-import { getAllPlants } from '../api/plantApi';
+import { getAllPlants, deletePlant } from '../api/plantApi';
 import './PlantList.css';
-import { deletePlant } from '../api/plantApi';
 import { FaEye, FaTrash, FaEdit } from 'react-icons/fa';
-
-
-
 
 function PlantList() {
     const [plants, setPlants] = useState([]);
-    const isAdmin = true; // 🔐 À remplacer plus tard par une vraie vérification
+    const role = localStorage.getItem('role');
+    const token = localStorage.getItem('token');
+    const isLoggedIn = !!token;
+    const isAdmin = role === 'ADMIN';
 
     useEffect(() => {
         getAllPlants()
-            .then(res => {
-                console.log("✅ Plantes reçues :", res.data);
-
+            .then((res) => {
+                console.log('✅ Plantes reçues :', res.data);
                 setPlants(res.data);
             })
-            .catch(err => console.error("❌ Erreur API :", err));
+            .catch((err) => console.error('❌ Erreur API :', err));
     }, []);
 
-    function handleDelete(id) {
-        if (window.confirm("Voulez-vous vraiment supprimer cette plante ?")) {
+    const handleDelete = (id) => {
+        if (window.confirm('Voulez-vous vraiment supprimer cette plante ?')) {
             deletePlant(id)
                 .then(() => {
-                    setPlants(prev => prev.filter(p => p.id !== id));
+                    setPlants((prev) => prev.filter((p) => p.id !== id));
                 })
-                .catch(err => console.error("❌ Erreur suppression :", err));
+                .catch((err) => console.error('❌ Erreur suppression :', err));
         }
-    }
+    };
 
-    function handleEdit(id) {
-        window.location.href = `/plants/edit/${id}`; // 🔄 Redirection vers la future page d’édition
-    }
-
+    const handleEdit = (id) => {
+        window.location.href = `/plants/edit/${id}`;
+    };
 
     return (
         <div className="plant-list">
             <div className="plant-list-header">
                 <h2>🌿 Plantes médicinales</h2>
-                <button className="add-button" onClick={() => window.location.href = '/plants/new'}>
-                    ➕ Ajouter une plante
-                </button>
+
+                {/* 🔒 Bouton Ajouter visible uniquement pour ADMIN */}
+                {isAdmin && isLoggedIn && (
+                    <button
+                        className="add-button"
+                        onClick={() => (window.location.href = '/plants/new')}
+                    >
+                        ➕ Ajouter une plante
+                    </button>
+                )}
             </div>
+
+            {/* 🔒 Message d’information si non connecté */}
+            {!isLoggedIn && (
+                <p style={{ color: 'gray', textAlign: 'center' }}>
+                    🔒 Connectez-vous pour ajouter ou modifier des plantes.
+                </p>
+            )}
+
             <div className="card-grid">
-                {plants.map(plant => (
+                {plants.map((plant) => (
                     <div className="plant-card" key={plant.id}>
                         <img src={plant.imageUrl} alt={plant.name} className="plant-image" />
                         <div className="plant-info">
                             <h3>{plant.name}</h3>
-                            <p><strong>Origine :</strong> {plant.origin}</p>
-                            <p><strong>Description :</strong> {plant.description}</p>
-                            <p><strong>Saison :</strong> {plant.seasonFound}</p>
+                            <p>
+                                <strong>Origine :</strong> {plant.origin}
+                            </p>
+                            <p>
+                                <strong>Description :</strong> {plant.description}
+                            </p>
+                            <p>
+                                <strong>Saison :</strong> {plant.seasonFound}
+                            </p>
+
                             <div className="button-group">
                                 <div className="button-row">
-                                    <button className="view-button" onClick={() => window.location.href = `/plants/${plant.id}`}>
+                                    <button
+                                        className="view-button"
+                                        onClick={() => (window.location.href = `/plants/${plant.id}`)}
+                                    >
                                         <FaEye style={{ marginRight: '6px' }} />
                                         Voir plus
                                     </button>
 
-                                    {isAdmin && (
-                                        <button className="edit-button" onClick={() => handleEdit(plant.id)}>
+                                    {/* 🔒 Modifier visible uniquement pour ADMIN */}
+                                    {isAdmin && isLoggedIn && (
+                                        <button
+                                            className="edit-button"
+                                            onClick={() => handleEdit(plant.id)}
+                                        >
                                             <FaEdit style={{ marginRight: '6px' }} />
                                             Modifier
                                         </button>
                                     )}
                                 </div>
 
-                                {isAdmin && (
+                                {/* 🔒 Supprimer visible uniquement pour ADMIN */}
+                                {isAdmin && isLoggedIn && (
                                     <div className="button-row">
-                                        <button className="delete-button" onClick={() => handleDelete(plant.id)}>
+                                        <button
+                                            className="delete-button"
+                                            onClick={() => handleDelete(plant.id)}
+                                        >
                                             <FaTrash style={{ marginRight: '6px' }} />
                                             Supprimer
                                         </button>
