@@ -17,8 +17,15 @@ api.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
+// Pagination avec filtres facultatifs
+export const getAllPlants = (page = 0, size = 6, name = "", season = "") => {
+    const params = new URLSearchParams({ page, size });
+    if (name) params.append("name", name);
+    if (season) params.append("season", season);
+    return api.get(`?${params.toString()}`);
+};
+
 // 🌿 Fonctions API
-export const getAllPlants = () => api.get('');
 export const getPlantById = (id) => api.get(`/id/${id}`);
 export const createPlant = (data) => api.post('', data);
 export const updatePlant = (id, data) => api.put(`/id/${id}`, data);

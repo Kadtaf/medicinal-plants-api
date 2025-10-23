@@ -6,26 +6,51 @@ import com.devfullstack.medicinal_plants_api.model.Plant;
 import com.devfullstack.medicinal_plants_api.service.PlantService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/api/plants")
+@RequestMapping({"/api/plants", "/api/plants/"})
 public class PlantController {
 
     @Autowired
     private PlantService service;
 
-
+    /**
+     * ✅ Liste paginée + filtrage par nom ou saison
+     */
     @GetMapping
-    public ResponseEntity<List<PlantResponseDTO>> getAll() {
-        List<Plant> plants = service.getAllPlants();
-        return ResponseEntity.ok(service.convertToResponseDTO(plants));
+    public ResponseEntity<Map<String, Object>> getAllPaginatedAndFiltered(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "6") int size,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String season
+    ) {
+        Page<Plant> plantPage;
+
+        if (name != null && !name.isBlank()) {
+            plantPage = service.getPaginatedPlantsByName(name, page, size);
+        } else if (season != null && !season.isBlank()) {
+            plantPage = service.getPaginatedPlantsBySeason(season, page, size);
+        } else {
+            plantPage = service.getPaginatedPlants(page, size);
+        }
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("plants", service.convertToResponseDTO(plantPage.getContent()));
+        response.put("currentPage", plantPage.getNumber());
+        response.put("totalItems", plantPage.getTotalElements());
+        response.put("totalPages", plantPage.getTotalPages());
+
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/id/{id}")
@@ -54,18 +79,4 @@ public class PlantController {
         service.deletePlant(id);
         return ResponseEntity.noContent().build();
     }
-
-    @GetMapping("/season/{season}")
-    public ResponseEntity<List<PlantResponseDTO>> getBySeason(@PathVariable String season) {
-        List<Plant> plants = service.getPlantsBySeason(season);
-        return ResponseEntity.ok(service.convertToResponseDTO(plants));
-    }
-
-    @GetMapping("/search")
-    public ResponseEntity<PlantResponseDTO> getByName(@RequestParam String name) {
-        Plant plant = service.getPlantByName(name);
-        return ResponseEntity.ok(service.convertToResponseDTO(plant));
-    }
-
-
 }

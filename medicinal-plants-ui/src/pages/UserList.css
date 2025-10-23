@@ -7,28 +7,26 @@
 /* 🧩 Header aligné */
 .user-list-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* ✅ titre à gauche, bouton à droite */
     align-items: center;
     margin-bottom: 20px;
 }
 
 .add-button {
-    display: flex;
-    align-items: center;
     background: #28a745;
     color: white;
     border: none;
-    padding: 8px 14px;
+    padding: 8px 12px;
     border-radius: 6px;
-    font-size: 0.95rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .add-button:hover {
-    background: #218838;
-    transform: scale(1.05);
+    background-color: #218838;
 }
+
 
 .user-table {
     width: 100%;

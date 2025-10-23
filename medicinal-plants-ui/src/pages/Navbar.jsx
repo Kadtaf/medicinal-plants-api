@@ -34,7 +34,7 @@ function Navbar({ isAuthenticated, onLogout }) {
                 </li>
 
                 {/* 🔒 Lien visible seulement pour les admins */}
-                {isAuthenticated && role === "ADMIN" && (
+                {isAuthenticated && role === "ROLE_ADMIN" && (
                     <li>
                         <Link to="/users" className="admin-link">
                             <FaUsersCog style={{ marginRight: "6px" }} />

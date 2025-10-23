@@ -22,3 +22,4 @@ export const getUserById = (id) => api.get(`/${id}`);
 export const createUser = (data) => api.post("", data);
 export const updateUser = (id, data) => api.put(`/${id}`, data);
 export const deleteUser = (id) => api.delete(`/${id}`);
+export const searchUsers = (username) => api.get(`/search?username=${username}`);

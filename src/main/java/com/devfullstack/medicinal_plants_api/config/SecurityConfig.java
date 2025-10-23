@@ -49,16 +49,16 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource))
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
-
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
                 .authorizeHttpRequests(auth -> auth
 
-                        // ✅ Swagger et documentation publique
+                        // ✅ Swagger UI et docs
                         .requestMatchers(
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
@@ -78,28 +78,29 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/images/**").permitAll()
 
                         // 🔐 Gestion des utilisateurs → ADMIN uniquement
-                        .requestMatchers("/api/users/**").hasRole("ADMIN")
+                        .requestMatchers("/api/users/**").hasAuthority("ROLE_ADMIN")
 
-                        // 🌿 Lecture libre sur les plantes
+                        // 🌿 Lecture libre des plantes
                         .requestMatchers(HttpMethod.GET, "/api/plants/**").permitAll()
 
-                        // 🌿 Modification / suppression → ADMIN
-                        .requestMatchers(HttpMethod.POST, "/api/plants/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/api/plants/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/api/plants/**").hasRole("ADMIN")
+                        // 🌿 Modification / suppression / ajout → ADMIN
+                        .requestMatchers(HttpMethod.POST, "/api/plants/**").hasAuthority("ROLE_ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/plants/**").hasAuthority("ROLE_ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/plants/**").hasAuthority("ROLE_ADMIN")
 
                         // 🔒 Tout le reste → Authentifié
                         .anyRequest().authenticated()
                 )
 
-                // ✅ Activation du filtre JWT
+                // ✅ Filtre JWT avant le filtre de login standard
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
 
+                // ✅ Pas de formulaire / logout / httpBasic
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
                 .logout(AbstractHttpConfigurer::disable);
 
+        System.out.println("✅ SecurityConfig chargé avec succès - protection JWT active !");
         return http.build();
     }
-
 }

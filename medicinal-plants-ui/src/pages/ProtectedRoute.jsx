@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children, requireAdmin = false }) => {
     }
 
     // 🚫 Pas admin → page d’accès refusé
-    if (requireAdmin && role !== "ADMIN") {
+    if (requireAdmin && role !== "ROLE_ADMIN") {
         return <AccessDenied />;
     }
 

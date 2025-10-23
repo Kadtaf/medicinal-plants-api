@@ -66,4 +66,9 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/search")
+    public List<User> searchUsers(@RequestParam String username) {
+        return userService.searchByUsername(username); // méthode à créer dans UserService
+    }
 }

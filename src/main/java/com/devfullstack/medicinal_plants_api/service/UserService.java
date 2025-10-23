@@ -127,4 +127,8 @@ public class UserService {
             );
         }
     }
+
+    public List<User> searchByUsername(String username) {
+        return userRepository.findByUsernameContainingIgnoreCase(username);
+    }
 }

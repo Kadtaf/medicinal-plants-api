@@ -5,6 +5,9 @@ import com.devfullstack.medicinal_plants_api.dto.PlantResponseDTO;
 import com.devfullstack.medicinal_plants_api.model.Plant;
 import com.devfullstack.medicinal_plants_api.repositories.PlantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -83,5 +86,20 @@ public class PlantService {
         return plants.stream()
                 .map(this::convertToResponseDTO)
                 .toList(); // Java 16+ ; sinon utilise .collect(Collectors.toList())
+    }
+
+    public Page<Plant> getPaginatedPlants(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return plantRepository.findAll(pageable);
+    }
+
+    public Page<Plant> getPaginatedPlantsByName(String name, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return plantRepository.findByNameContainingIgnoreCase(name, pageable);
+    }
+
+    public Page<Plant> getPaginatedPlantsBySeason(String season, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return plantRepository.findBySeasonFoundContainingIgnoreCase(season, pageable);
     }
 }

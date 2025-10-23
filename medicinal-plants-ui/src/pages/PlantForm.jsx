@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import { createPlant } from '../api/plantApi';
+import {createPlant, getAllPlants} from '../api/plantApi';
 import { useNavigate } from 'react-router-dom';
 import ImageGallery from './ImageGallery';
+import { toast } from 'react-toastify';
 import './PlantForm.css';
 
 function PlantForm() {
@@ -13,7 +14,18 @@ function PlantForm() {
         imageUrl: ''
     });
 
+    const [usedImages, setUsedImages] = useState([]);
     const [imageOptions, setImageOptions] = useState([]);
+
+    useEffect(() => {
+        getAllPlants(0, 1000) // ou une API dédiée si tu veux juste les images
+            .then(res => {
+                const images = res.data.plants.map(p => p.imageUrl);
+                setUsedImages(images);
+            })
+            .catch(err => console.error("❌ Erreur chargement des plantes :", err));
+    }, []);
+
 
     useEffect(() => {
         fetch('http://localhost:8080/api/images')
@@ -37,17 +49,20 @@ function PlantForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validation simple
         if (!formData.name || !formData.origin || !formData.description || !formData.seasonFound || !formData.imageUrl) {
-            setError("Tous les champs sont obligatoires.");
+            toast.warn("⚠️ Tous les champs sont obligatoires.");
             return;
         }
+
         console.log("Payload envoyé :", formData);
         createPlant(formData)
-            .then(() => navigate('/'))
+            .then(() => {
+                toast.success("🌿 Plante ajoutée avec succès !");
+                navigate('/');
+            })
             .catch(err => {
                 console.error("❌ Erreur création :", err);
-                setError("Erreur lors de l'ajout de la plante.");
+                toast.error("❌ Erreur lors de l'ajout de la plante.");
             });
     };
 
@@ -82,6 +97,7 @@ function PlantForm() {
             <ImageGallery
                 selectedUrl={formData.imageUrl}
                 onSelect={(url) => setFormData(prev => ({ ...prev, imageUrl: url }))}
+                usedImages={usedImages}
             />
         </div>
     );

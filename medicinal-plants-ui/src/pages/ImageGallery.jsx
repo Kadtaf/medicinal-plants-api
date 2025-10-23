@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './ImageGallery.css';
-import {data} from "react-router-dom";
 
-function ImageGallery({ selectedUrl, onSelect }) {
+
+function ImageGallery({ selectedUrl, onSelect, usedImages = [] }) {
     const [imageOptions, setImageOptions] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [usedImages, setUsedImages] = useState([]);
+
 
     // 🔄 Chargement des images disponibles
     useEffect(() => {
@@ -28,20 +28,6 @@ function ImageGallery({ selectedUrl, onSelect }) {
         fetchImages();
     }, []);
 
-    // 🔄 Chargement des images déjà utilisées
-    useEffect(() => {
-        const fetchUsedImages = async () => {
-            try {
-                const res = await fetch('http://localhost:8080/api/plants');
-                const data = await res.json();
-                const urls = data.map(plant => plant.imageUrl);
-                setUsedImages(urls);
-            } catch (err) {
-                console.error("❌ Erreur chargement plantes :", err);
-            }
-        };
-        fetchUsedImages();
-    }, []);
 
     return (
         <div className="image-gallery">
@@ -66,7 +52,7 @@ function ImageGallery({ selectedUrl, onSelect }) {
                                     <img
                                         src={option.url}
                                         alt={option.name}
-                                        onClick={() => onSelect(option.url)}
+                                        onClick={() => !usedImages.includes(option.url) && onSelect(option.url)}
                                         className={`${selectedUrl === option.url ? "selected" : ""} ${usedImages.includes(option.url) ? "used" : ""}`}
                                     />
                                     {usedImages.includes(option.url) && (

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getPlantById, updatePlant } from '../api/plantApi';
+import {getAllPlants, getPlantById, updatePlant} from '../api/plantApi';
 import ImageGallery from "./ImageGallery";
 import './PlantForm.css';
+import {toast} from "react-toastify";
 
 function PlantEditForm() {
     const { id } = useParams();
@@ -15,13 +16,25 @@ function PlantEditForm() {
         imageUrl: ''
     });
     const [error, setError] = useState('');
+    const [usedImages, setUsedImages] = useState([]);
+
+    useEffect(() => {
+        getAllPlants(0, 1000)
+            .then(res => {
+                const urls = res.data.plants
+                    .filter(p => p.id !== parseInt(id)) // exclure la plante en cours d’édition
+                    .map(p => p.imageUrl);
+                setUsedImages(urls);
+            })
+            .catch(err => console.error("❌ Erreur chargement images utilisées :", err));
+    }, [id]);
 
     useEffect(() => {
         getPlantById(id)
             .then(res => setFormData(res.data))
             .catch(err => {
                 console.error("❌ Erreur chargement :", err);
-                setError("Impossible de charger la plante.");
+                toast.error("❌ Impossible de charger la plante.");
             });
     }, [id]);
 
@@ -36,15 +49,18 @@ function PlantEditForm() {
         e.preventDefault();
 
         if (!formData.name || !formData.origin || !formData.description || !formData.seasonFound || !formData.imageUrl) {
-            setError("Tous les champs sont obligatoires.");
+            toast.warn("⚠️ Tous les champs sont obligatoires.");
             return;
         }
 
         updatePlant(id, formData)
-            .then(() => navigate('/'))
+            .then(() => {
+                toast.success("✅ Plante modifiée avec succès !");
+                navigate('/');
+            })
             .catch(err => {
                 console.error("❌ Erreur modification :", err);
-                setError("Erreur lors de la modification.");
+                toast.error("❌ Erreur lors de la modification.");
             });
     };
 
@@ -79,6 +95,7 @@ function PlantEditForm() {
             <ImageGallery
                 selectedUrl={formData.imageUrl}
                 onSelect={(url) => setFormData(prev => ({ ...prev, imageUrl: url }))}
+                usedImages={usedImages}
             />
         </div>
     );
