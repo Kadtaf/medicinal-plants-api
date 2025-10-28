@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api/AuthApi";
-import "./LoginForm.css";
+import "../css/LoginForm.css";
 
 const LoginForm = ({ onLogin }) => {  // ✅ <-- ajout du onLogin reçu depuis App.js
     const [username, setUsername] = useState("");

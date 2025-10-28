@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { createUser, getUserById, updateUser } from "../api/userApi";
 import { toast } from "react-toastify";
-import "./UserForm.css";
+import "../css/UserForm.css";
 
 const UserForm = () => {
     const { id } = useParams();

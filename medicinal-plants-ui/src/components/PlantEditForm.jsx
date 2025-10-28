@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {getAllPlants, getPlantById, updatePlant} from '../api/plantApi';
+import { getAllPlants, getPlantById, updatePlant } from '../api/plantApi';
 import ImageGallery from "./ImageGallery";
-import './PlantForm.css';
-import {toast} from "react-toastify";
+import '../css/PlantForm.css';
+import { toast } from "react-toastify";
 
 function PlantEditForm() {
     const { id } = useParams();
     const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: '',
         origin: '',
         description: '',
         seasonFound: '',
-        imageUrl: ''
+        imageUrl: '',
+        affiliateLink: '',
+        uses: '', // champ texte, sera converti en tableau
+        properties: '' // ✅ champ texte, sera converti en tableau
     });
+
     const [error, setError] = useState('');
     const [usedImages, setUsedImages] = useState([]);
 
@@ -22,7 +27,7 @@ function PlantEditForm() {
         getAllPlants(0, 1000)
             .then(res => {
                 const urls = res.data.plants
-                    .filter(p => p.id !== parseInt(id)) // exclure la plante en cours d’édition
+                    .filter(p => p.id !== parseInt(id))
                     .map(p => p.imageUrl);
                 setUsedImages(urls);
             })
@@ -31,7 +36,14 @@ function PlantEditForm() {
 
     useEffect(() => {
         getPlantById(id)
-            .then(res => setFormData(res.data))
+            .then(res => {
+                const plant = res.data;
+                setFormData({
+                    ...plant,
+                    uses: plant.uses ? plant.uses.join(', ') : '',
+                    properties: plant.properties ? plant.properties.join(', ') : '' // ✅ conversion tableau → texte
+                });
+            })
             .catch(err => {
                 console.error("❌ Erreur chargement :", err);
                 toast.error("❌ Impossible de charger la plante.");
@@ -48,12 +60,27 @@ function PlantEditForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!formData.name || !formData.origin || !formData.description || !formData.seasonFound || !formData.imageUrl) {
-            toast.warn("⚠️ Tous les champs sont obligatoires.");
+        const requiredFields = ['name', 'origin', 'description', 'seasonFound', 'imageUrl'];
+        const missing = requiredFields.filter(field => !formData[field]);
+
+        if (missing.length > 0) {
+            toast.warn("⚠️ Tous les champs obligatoires doivent être remplis.");
             return;
         }
 
-        updatePlant(id, formData)
+        const payload = {
+            ...formData,
+            uses: formData.uses
+                .split(',')
+                .map(u => u.trim())
+                .filter(u => u.length > 0),
+            properties: formData.properties
+                .split(',')
+                .map(p => p.trim())
+                .filter(p => p.length > 0) // ✅ conversion texte → tableau
+        };
+
+        updatePlant(id, payload)
             .then(() => {
                 toast.success("✅ Plante modifiée avec succès !");
                 navigate('/');
@@ -68,6 +95,7 @@ function PlantEditForm() {
         <div className="plant-form-container">
             <h2>✏️ Modifier la plante</h2>
             {error && <p className="error">{error}</p>}
+            <button className="back-button" type="button" onClick={() => navigate('/')}>↩️ Retour à la liste</button>
             <form onSubmit={handleSubmit} className="plant-form">
                 <label>Nom</label>
                 <input type="text" name="name" value={formData.name} onChange={handleChange} />
@@ -90,8 +118,36 @@ function PlantEditForm() {
                     </div>
                 )}
 
+                <label>Lien affilié (optionnel)</label>
+                <input
+                    type="text"
+                    name="affiliateLink"
+                    value={formData.affiliateLink}
+                    onChange={handleChange}
+                    placeholder="https://aroma-zone.com/produit/tisane-lavande"
+                />
+
+                <label>Formes d’usage (séparées par des virgules)</label>
+                <input
+                    type="text"
+                    name="uses"
+                    value={formData.uses}
+                    onChange={handleChange}
+                    placeholder="Infusion, Décoction, Gélule"
+                />
+
+                <label>Propriétés médicinales (séparées par des virgules)</label>
+                <input
+                    type="text"
+                    name="properties"
+                    value={formData.properties}
+                    onChange={handleChange}
+                    placeholder="Anxiété, Digestion, Sommeil"
+                />
+
                 <button type="submit">💾 Enregistrer</button>
             </form>
+
             <ImageGallery
                 selectedUrl={formData.imageUrl}
                 onSelect={(url) => setFormData(prev => ({ ...prev, imageUrl: url }))}

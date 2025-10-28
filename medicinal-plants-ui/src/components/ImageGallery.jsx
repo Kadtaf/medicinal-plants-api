@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './ImageGallery.css';
+import '../css/ImageGallery.css';
 
 
 function ImageGallery({ selectedUrl, onSelect, usedImages = [] }) {

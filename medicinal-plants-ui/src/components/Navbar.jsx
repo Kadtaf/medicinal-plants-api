@@ -1,12 +1,13 @@
 // src/components/Navbar.jsx
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaSignInAlt, FaSignOutAlt, FaLeaf, FaUsersCog } from "react-icons/fa";
-import "./Navbar.css";
+import "../css/Navbar.css";
 
 function Navbar({ isAuthenticated, onLogout }) {
     const navigate = useNavigate();
     const role = localStorage.getItem("role");
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const handleLogout = () => {
         onLogout(); // ⚙️ fonction passée depuis App.js
@@ -21,8 +22,10 @@ function Navbar({ isAuthenticated, onLogout }) {
                     Plantes Médicinales
                 </Link>
             </div>
-
-            <ul className="navbar-links">
+            <button className="burger-button" onClick={() => setMenuOpen(!menuOpen)}>
+                ☰
+            </button>
+            <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
                 <li>
                     <Link to="/plants">Plantes</Link>
                 </li>

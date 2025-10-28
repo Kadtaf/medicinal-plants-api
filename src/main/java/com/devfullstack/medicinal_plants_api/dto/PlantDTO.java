@@ -7,6 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
+import java.util.List;
+import java.util.Set;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,4 +30,8 @@ public class PlantDTO {
 
     @URL(message = "L'URL de l'image doit être valide")
     private String imageUrl;
+
+    private String affiliateLink;
+    private Set<String> uses;
+    private List<String> properties;
 }

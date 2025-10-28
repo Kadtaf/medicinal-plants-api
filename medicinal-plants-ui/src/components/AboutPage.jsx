@@ -1,5 +1,5 @@
 import React from 'react';
-import './StaticPage.css';
+import '../css/StaticPage.css';
 
 function AboutPage() {
     return (

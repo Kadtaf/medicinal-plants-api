@@ -19,6 +19,8 @@ public interface PlantRepository extends JpaRepository<Plant, Long> {
 
     Optional<Plant> findByName(String name);
 
+    Page<Plant> findByPropertiesContainingIgnoreCase(String property, Pageable pageable);
+
 
 }
 

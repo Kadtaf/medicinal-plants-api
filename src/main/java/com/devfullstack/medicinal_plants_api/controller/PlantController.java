@@ -7,6 +7,9 @@ import com.devfullstack.medicinal_plants_api.service.PlantService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -32,16 +35,21 @@ public class PlantController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "6") int size,
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String season
+            @RequestParam(required = false) String season,
+            @RequestParam(required = false) String property
     ) {
         Page<Plant> plantPage;
+        Pageable pageable = PageRequest.of(page, size);
 
-        if (name != null && !name.isBlank()) {
-            plantPage = service.getPaginatedPlantsByName(name, page, size);
+        // ✅ Priorité au filtre par propriété
+        if (property != null && !property.isBlank()) {
+            plantPage = service.getPaginatedPlantsByProperty(property, pageable);
+        } else if (name != null && !name.isBlank()) {
+            plantPage = service.getPaginatedPlantsByName(name, pageable);
         } else if (season != null && !season.isBlank()) {
-            plantPage = service.getPaginatedPlantsBySeason(season, page, size);
+            plantPage = service.getPaginatedPlantsBySeason(season, pageable);
         } else {
-            plantPage = service.getPaginatedPlants(page, size);
+            plantPage = service.getPaginatedPlants(pageable);
         }
 
         Map<String, Object> response = new HashMap<>();

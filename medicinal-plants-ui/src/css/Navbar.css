@@ -99,3 +99,47 @@
 .logout-btn:hover {
     color: #b52d3a;
 }
+
+/* 🔧 Burger button */
+.burger-button {
+    display: none;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* 🔧 Responsive menu */
+@media screen and (max-width: 768px) {
+    .burger-button {
+        display: block;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #388e3c;
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 8px;
+    }
+
+    .navbar-links.open {
+        display: flex;
+    }
+
+    .navbar-links li {
+        margin-bottom: 0.5rem;
+    }
+
+    .navbar-logo {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}

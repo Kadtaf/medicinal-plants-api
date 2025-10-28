@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getAllPlants, deletePlant } from "../api/plantApi";
 import { FaEye, FaTrash, FaEdit, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { toast } from "react-toastify";
-import "./PlantList.css";
-import {useNavigate} from "react-router-dom";
+import "../css/PlantList.css";
+import { useNavigate } from "react-router-dom";
 
 function PlantList() {
     const [plants, setPlants] = useState([]);
@@ -14,30 +14,17 @@ function PlantList() {
     const [searchTerm, setSearchTerm] = useState("");
     const [filterType, setFilterType] = useState("name");
     const navigate = useNavigate();
-
-    // 🔄 Réinitialisation via navigation
-    useEffect(() => {
-        // Si on vient d'un clic sur "Plantes", recharger tout
-        if (window.location.pathname === "/plants") {
-            setSearchTerm("");
-            fetchPlants(0, "");
-        }
-    }, [window.location.pathname]);
-// "name" ou "season"
-
-    const role = localStorage.getItem("role");
-    const token = localStorage.getItem("token");
-    const isLoggedIn = !!token;
-    const isAdmin = role === "ROLE_ADMIN";
+    const size = 6;
 
     // 🔹 Charger les plantes paginées depuis l'API
     const fetchPlants = (pageNumber = 0, search = "") => {
         setLoading(true);
 
-        const name = filterType === "name" && search ? search : "";
-        const season = filterType === "season" && search ? search : "";
+        const name = filterType === "name" ? search : "";
+        const season = filterType === "season" ? search : "";
+        const property = filterType === "property" ? search : "";
 
-        getAllPlants(pageNumber, 6, name, season)
+        getAllPlants(pageNumber, size, name, season, property)
             .then((res) => {
                 setPlants(res.data.plants || []);
                 setTotalPages(res.data.totalPages || 1);
@@ -50,16 +37,33 @@ function PlantList() {
             .finally(() => setLoading(false));
     };
 
+    // 🔄 Réinitialisation via navigation
+    useEffect(() => {
+        if (window.location.pathname === "/plants") {
+            setSearchTerm("");
+            fetchPlants(0, "");
+        }
+    }, [window.location.pathname]);
 
     useEffect(() => {
         fetchPlants(page);
     }, [page]);
 
+    useEffect(() => {
+        if (searchTerm.trim() === "") {
+            fetchPlants(0, "");
+        }
+    }, [searchTerm]);
+
+    const role = localStorage.getItem("role");
+    const token = localStorage.getItem("token");
+    const isLoggedIn = !!token;
+    const isAdmin = role === "ROLE_ADMIN";
+
     const [deleteConfirm, setDeleteConfirm] = useState(null);
 
     const handleDelete = (id) => {
         if (deleteConfirm === id) {
-            // ✅ Deuxième clic → on supprime réellement
             deletePlant(id)
                 .then(() => {
                     setPlants((prev) => prev.filter((p) => p.id !== id));
@@ -71,36 +75,22 @@ function PlantList() {
                     toast.error("⚠️ Échec de la suppression !");
                 });
         } else {
-            // ⚠️ Premier clic → on demande confirmation
             setDeleteConfirm(id);
             toast.warn("⚠️ Cliquez à nouveau sur « Supprimer » pour confirmer.", {
                 autoClose: 3000,
             });
-
-            // ⏳ Réinitialise après 3 secondes
             setTimeout(() => setDeleteConfirm(null), 3000);
         }
     };
 
-
-        // ⏳ Recharge automatique de la liste complète quand on vide la recherche
-        useEffect(() => {
-            if (searchTerm.trim() === "") {
-                fetchPlants(0, "");
-            }
-         }, [searchTerm]);
-
-
     if (loading) return <p style={{ textAlign: "center" }}>⏳ Chargement des plantes...</p>;
-
     return (
         <div className="plant-list">
             {/* 🔍 Barre de recherche */}
             <div className="search-bar">
                 <input
                     type="text"
-                    placeholder={`Rechercher par ${filterType === "name" ? "nom" : "saison"}...`}
-
+                    placeholder={`Rechercher par ${filterType === "name" ? "nom" : filterType === "season" ? "saison" : "propriété"}...`}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="search-input"
@@ -112,11 +102,12 @@ function PlantList() {
                 >
                     <option value="name">Nom</option>
                     <option value="season">Saison</option>
+                    <option value="property">Propriété</option>
                 </select>
                 <button
                     onClick={() => {
                         if (searchTerm.trim() === "") {
-                            toast.info("💡 Entrez un mot-clé ou une saison avant de rechercher !");
+                            toast.info("💡 Entrez un mot-clé avant de rechercher !");
                             return;
                         }
                         fetchPlants(0, searchTerm);
@@ -125,8 +116,8 @@ function PlantList() {
                 >
                     🔍 Rechercher
                 </button>
-
             </div>
+
             {searchTerm && (
                 <div style={{ textAlign: "center", marginBottom: "15px" }}>
                     <button

@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./pages/Navbar";
-import Footer from "./pages/Footer";
-import PlantList from "./pages/PlantList";
-import PlantDetail from "./pages/PlantDetail";
-import PlantForm from "./pages/PlantForm";
-import PlantEditForm from "./pages/PlantEditForm";
-import LoginForm from "./pages/LoginForm";
-import ContactPage from "./pages/ContactPage";
-import AboutPage from "./pages/AboutPage";
-import LegalPage from "./pages/LegalPage";
-import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
-import CookieBanner from "./pages/CookieBanner";
-import ProtectedRoute from "./pages/ProtectedRoute";
-import AccessDenied from "./pages/AccessDenied";
-import UserList from "./pages/UserList";
-import UserForm from "./pages/UserForm"; // 🔒 Import de la route protégée
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import PlantList from "./components/PlantList";
+import PlantDetail from "./components/PlantDetail";
+import PlantForm from "./components/PlantForm";
+import PlantEditForm from "./components/PlantEditForm";
+import LoginForm from "./components/LoginForm";
+import ContactPage from "./components/ContactPage";
+import AboutPage from "./components/AboutPage";
+import LegalPage from "./components/LegalPage";
+import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
+import CookieBanner from "./components/CookieBanner";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AccessDenied from "./components/AccessDenied";
+import UserList from "./components/UserList";
+import UserForm from "./components/UserForm"; // 🔒 Import de la route protégée
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);

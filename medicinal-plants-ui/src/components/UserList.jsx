@@ -4,7 +4,7 @@ import { getAllUsers, deleteUser } from "../api/userApi";
 import { FaEdit, FaTrash, FaUserPlus } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { searchUsers } from "../api/userApi";
-import "./UserList.css";
+import "../css/UserList.css";
 
 const UserList = () => {
     const [users, setUsers] = useState([]);

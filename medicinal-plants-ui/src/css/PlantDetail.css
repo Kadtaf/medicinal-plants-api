@@ -1,0 +1,61 @@
+.plant-detail-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.plant-detail-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.plant-detail-image {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.plant-detail-container p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.plant-detail-section {
+    margin-top: 1.5rem;
+}
+
+.plant-detail-section h4 {
+    margin-bottom: 0.5rem;
+    color: #16a085;
+}
+
+.plant-detail-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.plant-detail-section li {
+    margin-bottom: 0.4rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.plant-detail-section li::before {
+    content: "🌿";
+    position: absolute;
+    left: 0;
+}
+
+.back-button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #e0e0e0;
+    color: #2c3e50;
+    border: none;
+}

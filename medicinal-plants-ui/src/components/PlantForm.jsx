@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import {createPlant, getAllPlants} from '../api/plantApi';
+import React, { useEffect, useState } from 'react';
+import { createPlant, getAllPlants } from '../api/plantApi';
 import { useNavigate } from 'react-router-dom';
 import ImageGallery from './ImageGallery';
 import { toast } from 'react-toastify';
-import './PlantForm.css';
+import '../css/PlantForm.css';
 
 function PlantForm() {
     const [formData, setFormData] = useState({
@@ -11,14 +11,20 @@ function PlantForm() {
         origin: '',
         description: '',
         seasonFound: '',
-        imageUrl: ''
+        imageUrl: '',
+        affiliateLink: '',
+        uses: '', // champ texte, sera converti en tableau
+        properties: []
     });
 
     const [usedImages, setUsedImages] = useState([]);
     const [imageOptions, setImageOptions] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
-        getAllPlants(0, 1000) // ou une API dédiée si tu veux juste les images
+        getAllPlants(0, 1000)
             .then(res => {
                 const images = res.data.plants.map(p => p.imageUrl);
                 setUsedImages(images);
@@ -26,18 +32,12 @@ function PlantForm() {
             .catch(err => console.error("❌ Erreur chargement des plantes :", err));
     }, []);
 
-
     useEffect(() => {
         fetch('http://localhost:8080/api/images')
             .then(res => res.json())
             .then(data => setImageOptions(data))
             .catch(err => console.error("❌ Erreur chargement images :", err));
     }, []);
-
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const [error, setError] = useState('');
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData(prev => ({
@@ -49,13 +49,25 @@ function PlantForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!formData.name || !formData.origin || !formData.description || !formData.seasonFound || !formData.imageUrl) {
-            toast.warn("⚠️ Tous les champs sont obligatoires.");
+        const requiredFields = ['name', 'origin', 'description', 'seasonFound', 'imageUrl'];
+        const missing = requiredFields.filter(field => !formData[field]);
+
+        if (missing.length > 0) {
+            toast.warn("⚠️ Tous les champs obligatoires doivent être remplis.");
             return;
         }
 
-        console.log("Payload envoyé :", formData);
-        createPlant(formData)
+        const payload = {
+            ...formData,
+            uses: formData.uses
+                .split(',')
+                .map(u => u.trim())
+                .filter(u => u.length > 0)
+        };
+
+        console.log("Payload envoyé :", payload);
+
+        createPlant(payload)
             .then(() => {
                 toast.success("🌿 Plante ajoutée avec succès !");
                 navigate('/');
@@ -70,6 +82,7 @@ function PlantForm() {
         <div className="plant-form-container">
             <h2>➕ Ajouter une plante médicinale</h2>
             {error && <p className="error">{error}</p>}
+            <button className="back-button" type="button" onClick={() => navigate('/')}>↩️ Retour à la liste</button>
             <form onSubmit={handleSubmit} className="plant-form">
                 <label>Nom</label>
                 <input type="text" name="name" value={formData.name} onChange={handleChange} />
@@ -92,8 +105,39 @@ function PlantForm() {
                     </div>
                 )}
 
+                <label>Lien affilié (optionnel)</label>
+                <input
+                    type="text"
+                    name="affiliateLink"
+                    value={formData.affiliateLink}
+                    onChange={handleChange}
+                    placeholder="https://aroma-zone.com/produit/tisane-lavande"
+                />
+
+                <label>Formes d’usage (séparées par des virgules)</label>
+                <input
+                    type="text"
+                    name="uses"
+                    value={formData.uses}
+                    onChange={handleChange}
+                    placeholder="Infusion, Décoction, Gélule"
+                />
+                <label>Propriétés médicinales (séparées par des virgules)</label>
+                <input
+                    type="text"
+                    name="properties"
+                    value={formData.properties.join(", ")}
+                    onChange={(e) =>
+                        setFormData(prev => ({
+                            ...prev,
+                            properties: e.target.value.split(",").map(p => p.trim())
+                        }))
+                    }
+                />
+
                 <button type="submit">✅ Ajouter</button>
             </form>
+
             <ImageGallery
                 selectedUrl={formData.imageUrl}
                 onSelect={(url) => setFormData(prev => ({ ...prev, imageUrl: url }))}

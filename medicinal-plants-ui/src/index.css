@@ -31,3 +31,209 @@ html, body {
     flex: 1;
     padding: 1rem;
 }
+
+.plant-form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 600px) {
+    .plant-list,
+    .plant-form-container {
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .search-input,
+    .filter-select,
+    .search-button,
+    .reset-button,
+    .add-button,
+    .back-button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .card-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .plant-card {
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: #fff;
+        margin: 0 auto;
+
+    }
+
+    .plant-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px 8px 0 0;
+
+    }
+
+    .plant-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .plant-form input,
+    .plant-form textarea,
+    .plant-form button {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .image-preview img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    .pagination {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .plant-list-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .plant-list-header h2 {
+        margin: 0;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .add-button {
+        width: 100%;
+        max-width: 300px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .plant-list-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem; /* ✅ espace entre le titre et le bouton */
+        margin-bottom: 1.5rem;
+    }
+
+    .plant-list-header h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .add-button {
+        width: 100%;
+        max-width: 320px;
+        font-size: 1rem;
+    }
+
+    .plant-form-container {
+        margin: 1rem auto;
+        padding: 1rem;
+        width: 90%;
+        max-width: 600px;
+        box-sizing: border-box;
+    }
+
+    .plant-form h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .plant-form label {
+        font-size: 1rem;
+    }
+
+    .plant-form input,
+    .plant-form textarea,
+    .plant-form button,
+    .back-button {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .image-preview img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .back-button {
+        display: block;
+        margin: 1rem auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .plant-list-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .plant-list-header h2 {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .add-button {
+        width: 100%;
+        max-width: 320px;
+        font-size: 1rem;
+    }
+
+    .plant-form-container {
+        width: 90%;
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .plant-card {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+

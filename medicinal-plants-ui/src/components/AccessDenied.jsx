@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaLock, FaArrowLeft } from "react-icons/fa";
-import "./AccessDenied.css";
+import "../css/AccessDenied.css";
 
 const AccessDenied = () => {
     return (

@@ -52,6 +52,9 @@ public class PlantService {
         existingPlant.setDescription(dto.getDescription());
         existingPlant.setSeasonFound(dto.getSeasonFound());
         existingPlant.setImageUrl(dto.getImageUrl());
+        existingPlant.setAffiliateLink(dto.getAffiliateLink());
+        existingPlant.setUses(dto.getUses());
+        existingPlant.setProperties(dto.getProperties()); // ✅ ajout ici
 
         return plantRepository.save(existingPlant);
     }
@@ -63,6 +66,9 @@ public class PlantService {
         plant.setDescription(dto.getDescription());
         plant.setSeasonFound(dto.getSeasonFound());
         plant.setImageUrl(dto.getImageUrl());
+        plant.setAffiliateLink(dto.getAffiliateLink());
+        plant.setUses(dto.getUses());
+        plant.setProperties(dto.getProperties()); // ✅ ajout ici
         return plant;
     }
 
@@ -78,7 +84,10 @@ public class PlantService {
                 plant.getOrigin(),
                 plant.getDescription(),
                 plant.getSeasonFound(),
-                plant.getImageUrl()
+                plant.getImageUrl(),
+                plant.getAffiliateLink(),
+                plant.getUses(),
+                plant.getProperties()
         );
     }
 
@@ -88,18 +97,19 @@ public class PlantService {
                 .toList(); // Java 16+ ; sinon utilise .collect(Collectors.toList())
     }
 
-    public Page<Plant> getPaginatedPlants(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
+    public Page<Plant> getPaginatedPlants(Pageable pageable) {
         return plantRepository.findAll(pageable);
     }
 
-    public Page<Plant> getPaginatedPlantsByName(String name, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
+    public Page<Plant> getPaginatedPlantsByName(String name, Pageable pageable) {
         return plantRepository.findByNameContainingIgnoreCase(name, pageable);
     }
 
-    public Page<Plant> getPaginatedPlantsBySeason(String season, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
+    public Page<Plant> getPaginatedPlantsBySeason(String season, Pageable pageable) {
         return plantRepository.findBySeasonFoundContainingIgnoreCase(season, pageable);
+    }
+
+    public Page<Plant> getPaginatedPlantsByProperty(String property, Pageable pageable) {
+        return plantRepository.findByPropertiesContainingIgnoreCase(property, pageable);
     }
 }

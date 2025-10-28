@@ -1,0 +1,12 @@
+.sort-selector {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    align-items: center;
+}
+.sort-selector label {
+    font-weight: bold;
+}
+.sort-selector select {
+    padding: 0.4rem;
+}

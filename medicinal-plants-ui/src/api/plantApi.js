@@ -17,13 +17,18 @@ api.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
-// Pagination avec filtres facultatifs
-export const getAllPlants = (page = 0, size = 6, name = "", season = "") => {
-    const params = new URLSearchParams({ page, size });
+// ✅ Pagination avec filtres facultatifs (sans tri)
+export function getAllPlants(page, size, name = "", season = "", property = "") {
+    const params = new URLSearchParams();
+
+    params.append("page", page);
+    params.append("size", size);
     if (name) params.append("name", name);
     if (season) params.append("season", season);
+    if (property) params.append("property", property);
+
     return api.get(`?${params.toString()}`);
-};
+}
 
 // 🌿 Fonctions API
 export const getPlantById = (id) => api.get(`/id/${id}`);
