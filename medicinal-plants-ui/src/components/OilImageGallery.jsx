@@ -1,0 +1,65 @@
+import React, { useEffect, useState } from 'react';
+import '../css/ImageGallery.css';
+
+function OilImageGallery({ selectedUrl, onSelect, usedImages = [] }) {
+    const [imageOptions, setImageOptions] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // 🔄 Chargement des images des huiles essentielles
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const res = await fetch('http://localhost:8080/api/oil-images');
+                if (!res.ok) {
+                    console.error(`❌ HTTP ${res.status}`);
+                    setImageOptions([]);
+                    return;
+                }
+                const data = await res.json();
+                setImageOptions(Array.isArray(data) ? data : []);
+            } catch (err) {
+                console.error("❌ Erreur chargement images huiles :", err);
+                setImageOptions([]);
+            }
+        };
+        fetchImages();
+    }, []);
+
+    return (
+        <div className="image-gallery">
+            <p>📷 Sélectionner une image d’huile essentielle :</p>
+            <input
+                type="text"
+                placeholder="🔍 Rechercher une huile"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="image-search"
+            />
+            <div className="image-scroll">
+                {imageOptions
+                    .filter(option =>
+                        option.name &&
+                        option.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    )
+                    .map((option, index) => (
+                        <div key={index} className="image-item">
+                            <div className="image-wrapper">
+                                <img
+                                    src={option.url}
+                                    alt={option.name}
+                                    onClick={() => !usedImages.includes(option.url) && onSelect(option.url)}
+                                    className={`${selectedUrl === option.url ? "selected" : ""} ${usedImages.includes(option.url) ? "used" : ""}`}
+                                />
+                                {usedImages.includes(option.url) && (
+                                    <span className="used-badge">✔ utilisée</span>
+                                )}
+                            </div>
+                            <p className="image-label">{option.name}</p>
+                        </div>
+                    ))}
+            </div>
+        </div>
+    );
+}
+
+export default OilImageGallery;

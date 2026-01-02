@@ -42,7 +42,7 @@ public class GlobalExceptionHandler {
         body.put("error", status.getReasonPhrase());
         body.put("message", ex.getReason());
         body.put("path", request.getRequestURI());
-
+        ex.printStackTrace();
         return ResponseEntity.status(status).body(body);
     }
 
@@ -56,7 +56,12 @@ public class GlobalExceptionHandler {
         body.put("message", ex.getMessage());
         body.put("path", request.getRequestURI());
 
-        logger.error("❌ Erreur interne :", ex);// pour debug
+        logger.error("❌ Erreur interne dans {}.{} : {}",
+                ex.getStackTrace()[0].getClassName(),
+                ex.getStackTrace()[0].getMethodName(),
+                ex.getMessage(),
+                ex
+        );// pour debug
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }
 }

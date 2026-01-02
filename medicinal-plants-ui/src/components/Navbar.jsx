@@ -29,6 +29,7 @@ function Navbar({ isAuthenticated, onLogout }) {
                 <li>
                     <Link to="/plants">Plantes</Link>
                 </li>
+                    <Link to="/oils" className="nav-link">Nos huiles</Link>
                 <li>
                     <Link to="/contact">Contact</Link>
                 </li>

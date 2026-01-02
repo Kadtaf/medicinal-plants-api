@@ -77,16 +77,29 @@ public class SecurityConfig {
                         // ✅ Images publiques
                         .requestMatchers(HttpMethod.GET, "/api/images/**").permitAll()
 
+                        // ✅ Huiles - images publiques
+                        .requestMatchers(HttpMethod.GET, "/api/oil-images").permitAll()
+
+
                         // 🔐 Gestion des utilisateurs → ADMIN uniquement
                         .requestMatchers("/api/users/**").hasAuthority("ROLE_ADMIN")
 
                         // 🌿 Lecture libre des plantes
                         .requestMatchers(HttpMethod.GET, "/api/plants/**").permitAll()
 
-                        // 🌿 Modification / suppression / ajout → ADMIN
+                        // 🌿 Modification / suppression / ajout → ADMIN pour les plantes
                         .requestMatchers(HttpMethod.POST, "/api/plants/**").hasAuthority("ROLE_ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/plants/**").hasAuthority("ROLE_ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/plants/**").hasAuthority("ROLE_ADMIN")
+
+                        // 🌿 Lecture libre des oiles
+                        .requestMatchers(HttpMethod.GET, "/api/oils/**").permitAll()
+
+                        // 🌿 Modification / suppression / ajout → ADMIN pour
+                        .requestMatchers(HttpMethod.POST, "/api/oils/**").hasAuthority("ROLE_ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/oils/**").hasAuthority("ROLE_ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/oils/**").hasAuthority("ROLE_ADMIN")
+
 
                         // 🔒 Tout le reste → Authentifié
                         .anyRequest().authenticated()

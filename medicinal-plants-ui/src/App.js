@@ -17,6 +17,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AccessDenied from "./components/AccessDenied";
 import UserList from "./components/UserList";
 import UserForm from "./components/UserForm"; // 🔒 Import de la route protégée
+import OilList from "./components/OilList";
+import OilDetails from "./components/OilDetails";
+import OilCreate from "./components/OilCreate";
+import OilEdit from "./components/OilEdit";
+import OilsByPlant from "./components/OilsByPlant";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -55,6 +60,7 @@ function App() {
                         <Route path="/" element={<PlantList />} />
                         <Route path="/plants" element={<PlantList />} />
                         <Route path="/plants/:id" element={<PlantDetail />} />
+                        <Route path="/oils/plant/:plantId" element={<OilsByPlant />} />
                         <Route path="/contact" element={<ContactPage />} />
                         <Route path="/about" element={<AboutPage />} />
                         <Route path="/mentions-legales" element={<LegalPage />} />
@@ -78,6 +84,28 @@ function App() {
                                 </ProtectedRoute>
                             }
                         />
+
+                        {/* 🌿 Routes Huiles essentielles */}
+                        <Route path="/oils" element={<OilList />} />
+                        <Route path="/oils/id/:id" element={<OilDetails />} />
+                        <Route path="/oils/:id" element={<OilDetails />} />
+                        <Route
+                            path="/oils/create"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <OilCreate />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/oils/edit/:id"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <OilEdit />
+                                </ProtectedRoute>
+                            }
+                        />
+
                         {/* 🔒 Routes Users protégées ADMIN */}
                         <Route
                             path="/users"

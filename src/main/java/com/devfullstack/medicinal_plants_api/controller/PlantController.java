@@ -9,15 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -57,6 +57,8 @@ public class PlantController {
         response.put("currentPage", plantPage.getNumber());
         response.put("totalItems", plantPage.getTotalElements());
         response.put("totalPages", plantPage.getTotalPages());
+        System.out.println("Page content: " + plantPage.getContent());
+        System.out.println("✅ DTOs: " + service.convertToResponseDTO(plantPage.getContent()));
 
         return ResponseEntity.ok(response);
     }
@@ -64,27 +66,30 @@ public class PlantController {
     @GetMapping("/id/{id}")
     public ResponseEntity<PlantResponseDTO> getById(@PathVariable Long id) {
         Plant plant = service.getPlantById(id);
+        System.out.println("✅ Returned DTO: " + service.convertToResponseDTO(plant));
         return ResponseEntity.ok(service.convertToResponseDTO(plant));
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     public ResponseEntity<PlantResponseDTO> createPlant(@Valid @RequestBody PlantDTO dto) {
         Plant saved = service.createPlant(dto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.convertToResponseDTO(saved));
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.convertToResponseDTO(saved)); // ✅
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("/id/{id}")
     public ResponseEntity<PlantResponseDTO> update(@PathVariable Long id, @Valid @RequestBody PlantDTO dto) {
         Plant updated = service.updatePlant(id, dto);
         return ResponseEntity.ok(service.convertToResponseDTO(updated));
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("/id/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.deletePlant(id);
         return ResponseEntity.noContent().build();
     }
+
+
 }

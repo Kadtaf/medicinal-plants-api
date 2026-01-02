@@ -54,8 +54,9 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
     font-size: 1rem;
-    width: fit-content; /* ✅ pour éviter que le bouton prenne toute la largeur */
+   /* width: fit-content; /* ✅ pour éviter que le bouton prenne toute la largeur */
     text-align: center;
+    width: 50%;
 }
 
 .view-button svg,

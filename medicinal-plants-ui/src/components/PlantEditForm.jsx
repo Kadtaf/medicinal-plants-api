@@ -57,6 +57,15 @@ function PlantEditForm() {
         }));
     };
 
+    const isValidUrl = (url) => {
+        try {
+            new URL(url);
+            return true;
+        } catch {
+            return false;
+        }
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -65,6 +74,11 @@ function PlantEditForm() {
 
         if (missing.length > 0) {
             toast.warn("⚠️ Tous les champs obligatoires doivent être remplis.");
+            return;
+        }
+
+        if (!isValidUrl(formData.imageUrl)) {
+            toast.warn("⚠️ L'URL de l'image est invalide.");
             return;
         }
 
@@ -114,7 +128,8 @@ function PlantEditForm() {
 
                 {formData.imageUrl && (
                     <div className="image-preview">
-                        <img src={formData.imageUrl} alt="Preview" />
+                        <img src={formData.imageUrl} alt="Preview" onError={(e) => (e.target.src = "/placeholder.jpg")}
+                        />
                     </div>
                 )}
 

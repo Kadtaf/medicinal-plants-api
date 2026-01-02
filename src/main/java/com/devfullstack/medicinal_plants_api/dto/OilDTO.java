@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class OilSummaryDTO {
+public class OilDTO {
     private Long id;
     private String name;
     private String description;
@@ -15,11 +15,12 @@ public class OilSummaryDTO {
     private String imageUrl;
     private String affiliateLink;
 
-    private Long plantId;
+   // private Long plantId;
+    private PlantDTO plant;
 
     // Constructeur
-    public OilSummaryDTO(Long id, String name, String description, String benefits,
-                         String precautions, String imageUrl, String affiliateLink) {
+    public OilDTO(Long id, String name, String description, String benefits,
+                  String precautions, String imageUrl, String affiliateLink) {
         this.id = id;
         this.name = name;
         this.description = description;

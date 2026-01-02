@@ -175,7 +175,7 @@ function PlantList() {
                                             className="view-button"
                                             onClick={() => navigate(`/plants/${plant.id}`)}
                                         >
-                                            <FaEye style={{ marginRight: "6px" }} /> Voir plus
+                                            <FaEye /> Voir plus
                                         </button>
 
                                         {isAdmin && (
@@ -183,7 +183,7 @@ function PlantList() {
                                                 className="edit-button"
                                                 onClick={() => navigate(`/plants/edit/${plant.id}`)}
                                             >
-                                                <FaEdit style={{ marginRight: "6px" }} /> Modifier
+                                                <FaEdit /> Modifier
                                             </button>
                                         )}
                                     </div>
@@ -195,7 +195,7 @@ function PlantList() {
                                                 onClick={() => handleDelete(plant.id)}
                                                 disabled={deletingId === plant.id}
                                             >
-                                                {deletingId === plant.id ? "⏳" : <><FaTrash style={{ marginRight: "6px" }} /> Supprimer</>}
+                                                {deletingId === plant.id ? "⏳" : <><FaTrash /> Supprimer</>}
                                             </button>
                                         </div>
                                     )}

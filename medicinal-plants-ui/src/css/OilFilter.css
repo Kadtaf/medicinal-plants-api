@@ -1,0 +1,73 @@
+.oil-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem auto; /* ✅ centrage horizontal */
+    align-items: center;
+    justify-content: center; /* ✅ centrage du contenu */
+    max-width: 800px; /* ✅ limite la largeur pour éviter l'étalement */
+}
+
+/* ✅ Champ de saisie */
+.oil-filter-bar input[type="text"] {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    flex: 1 1 220px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.oil-filter-bar input[type="text"]:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* ✅ Menu déroulant */
+.oil-filter-bar select {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    flex: 1 1 180px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.oil-filter-bar select:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* ✅ Boutons */
+.oil-filter-bar button {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Bouton Rechercher */
+.oil-filter-bar button[type="button"]:first-of-type {
+    background-color: #4caf50;
+    color: white;
+}
+
+.oil-filter-bar button[type="button"]:first-of-type:hover {
+    background-color: #388e3c;
+}
+
+/* Bouton Réinitialiser */
+.oil-filter-bar button[type="button"]:last-of-type {
+    background-color: #007bff;
+    color: white;
+}
+
+.oil-filter-bar button[type="button"]:last-of-type:hover {
+    background-color: #d32f2f;
+}

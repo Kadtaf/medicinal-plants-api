@@ -1,20 +1,15 @@
 package com.devfullstack.medicinal_plants_api.dto;
 
 
+import lombok.Data;
+@Data
 public class ImageDTO {
-    private String name;
-    private String url;
+    private final String name;
+    private final String url;
 
     public ImageDTO(String name, String url) {
         this.name = name;
         this.url = url;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
 }

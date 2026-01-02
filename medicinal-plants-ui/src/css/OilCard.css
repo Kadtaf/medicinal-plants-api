@@ -1,0 +1,64 @@
+.oil-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 280px;
+    margin: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.oil-card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.oil-card-content {
+    padding: 12px;
+}
+
+.oil-card-actions {
+    display: flex;
+    flex-direction: column; /* Empile les boutons */
+    align-items: center;     /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    gap: 0.5rem;             /* Espacement entre les boutons */
+    margin-top: 1rem;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-icon:hover {
+    background-color: #2980b9;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+.btn-view {
+    background-color: #2ecc71; /* ✅ Vert doux */
+}
+
+.btn-view:hover {
+    background-color: #27ae60; /* ✅ Vert foncé au survol */
+}

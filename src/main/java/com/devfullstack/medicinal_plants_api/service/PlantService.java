@@ -1,12 +1,12 @@
 package com.devfullstack.medicinal_plants_api.service;
 
+import com.devfullstack.medicinal_plants_api.dto.OilDTO;
 import com.devfullstack.medicinal_plants_api.dto.PlantDTO;
 import com.devfullstack.medicinal_plants_api.dto.PlantResponseDTO;
 import com.devfullstack.medicinal_plants_api.model.Plant;
 import com.devfullstack.medicinal_plants_api.repositories.PlantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -78,6 +78,19 @@ public class PlantService {
     }
 
     public PlantResponseDTO convertToResponseDTO(Plant plant) {
+        OilDTO oilDTO = null;
+        if (plant.getOil() != null) {
+            oilDTO = new OilDTO(
+                    plant.getOil().getId(),
+                    plant.getOil().getName(),
+                    plant.getOil().getDescription(),
+                    plant.getOil().getBenefits(),
+                    plant.getOil().getPrecautions(),
+                    plant.getOil().getImageUrl(),
+                    plant.getOil().getAffiliateLink()
+            );
+        }
+
         return new PlantResponseDTO(
                 plant.getId(),
                 plant.getName(),
@@ -87,7 +100,8 @@ public class PlantService {
                 plant.getImageUrl(),
                 plant.getAffiliateLink(),
                 plant.getUses(),
-                plant.getProperties()
+                plant.getProperties(),
+                oilDTO // ✅ Ajout ici
         );
     }
 

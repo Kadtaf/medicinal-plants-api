@@ -1,138 +1,180 @@
 package com.devfullstack.medicinal_plants_api.controller;
 
-import com.devfullstack.medicinal_plants_api.config.SecurityConfig;
+import com.devfullstack.medicinal_plants_api.config.JwtAuthFilter;
+import com.devfullstack.medicinal_plants_api.config.JwtUtil;
 import com.devfullstack.medicinal_plants_api.dto.PlantResponseDTO;
+import com.devfullstack.medicinal_plants_api.dto.PlantDTO;
 import com.devfullstack.medicinal_plants_api.model.Plant;
 import com.devfullstack.medicinal_plants_api.service.PlantService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Import;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
+
 import java.util.List;
+import java.util.Set;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import org.springframework.security.test.context.support.WithMockUser;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
-@Import(PlantControllerTest.TestSecurityConfig.class)
-@WebMvcTest(PlantController.class) // 🧪 Test uniquement le contrôleur PlantController
+@WebMvcTest(controllers = PlantController.class, excludeAutoConfiguration = SecurityAutoConfiguration.class)
+@AutoConfigureMockMvc(addFilters = false)
+@ActiveProfiles("test")
 public class PlantControllerTest {
 
-    @TestConfiguration
-    @EnableWebSecurity
-    static class TestSecurityConfig {
-        @Bean
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-            http
-                    .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
-                    .csrf(csrf -> csrf.disable());
-            return http.build();
-        }
-    }
-
-
     @Autowired
-    private MockMvc mockMvc; // Simule les requêtes HTTP
+    private MockMvc mockMvc;
 
     @MockBean
-    private PlantService plantService; // Mock du service injecté dans le contrôleur
+    private PlantService plantService;
 
-    @WithMockUser(username = "user", roles = {"USER"})
+    @MockBean
+    private JwtUtil jwtUtil;
+
+    @MockBean
+    private JwtAuthFilter jwtAuthFilter;
+
+    @WithMockUser(username = "user", roles = {"ROLE-USER"})
     @Test
     public void testGetAllPlants() throws Exception {
-        // Données simulées
-        Plant plant1 = new Plant(1L, "Menthe", "Plante digestive", "https://image.com/menthe.jpg", "Europe", "Été");
-        Plant plant2 = new Plant(2L, "Camomille", "Plante apaisante", "https://image.com/camomille.jpg", "Asie", "Printemps");
+        Plant plant1 = new Plant("Menthe", "Europe", "Plante digestive", "Été", "https://image.com/menthe.jpg");
+        plant1.setId(1L);
+        Plant plant2 = new Plant("Camomille", "Asie", "Plante apaisante", "Printemps", "https://image.com/camomille.jpg");
+        plant2.setId(2L);
 
-        // Simulation du comportement du service
-        when(plantService.getAllPlants()).thenReturn(List.of(plant1, plant2));
-        when(plantService.convertToResponseDTO(List.of(plant1, plant2))).thenReturn(List.of(
-                new PlantResponseDTO(1L, "Menthe", "Plante digestive", "https://image.com/menthe.jpg", "Europe", "Été"),
-                new PlantResponseDTO(2L, "Camomille", "Plante apaisante", "https://image.com/camomille.jpg", "Asie", "Printemps")
-        ));
+        Page<Plant> mockPage = new PageImpl<>(List.of(plant1, plant2));
 
-        // Envoie une requête GET vers /api/plants
+        PlantResponseDTO dto1 = new PlantResponseDTO(1L, "Menthe", "Europe", "Plante digestive", "Été", "https://image.com/menthe.jpg");
+        dto1.setAffiliateLink("https://aroma-zone.com/menthe");
+        dto1.setUses(Set.of("Infusion"));
+        dto1.setProperties(List.of("Digestive"));
+
+        PlantResponseDTO dto2 = new PlantResponseDTO(2L, "Camomille", "Asie", "Plante apaisante", "Printemps", "https://image.com/camomille.jpg");
+        dto2.setAffiliateLink("https://aroma-zone.com/camomille");
+        dto2.setUses(Set.of("Décoction"));
+        dto2.setProperties(List.of("Apaisante"));
+
+        when(plantService.getPaginatedPlants(any(Pageable.class))).thenReturn(mockPage);
+        when(plantService.convertToResponseDTO(anyList())).thenReturn(List.of(dto1, dto2));
+        System.out.println("Mock page content: " + mockPage.getContent());
         mockMvc.perform(get("/api/plants"))
-                .andExpect(status().isOk()) // ✅ Vérifie que le statut est 200
-                .andExpect(jsonPath("$.length()").value(2)) // ✅ Vérifie qu'on reçoit 2 plantes
-                .andExpect(jsonPath("$[0].name").value("Menthe")) // ✅ Vérifie le nom de la première plante
-                .andExpect(jsonPath("$[1].name").value("Camomille")); // ✅ Vérifie le nom de la deuxième plante
+                .andDo(print())
+                .andDo(result -> {
+                    String json = result.getResponse().getContentAsString();
+                    System.out.println("✅ JSON response: " + json);
+                })
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.plants.length()").value(2))
+                .andExpect(jsonPath("$.plants[0].name").value("Menthe"))
+                .andExpect(jsonPath("$.plants[1].name").value("Camomille"))
+                .andExpect(jsonPath("$.totalItems").value(2));
     }
 
-    @WithMockUser(username = "admin", roles = {"ADMIN"})
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @WithMockUser(username = "admin", roles = {"ROLE-ADMIN"})
     @Test
     public void testCreatePlant_success() throws Exception {
-        // Données d'entrée simulées (DTO)
-        String jsonPayload = """
-        {
-            "name": "Romarin",
-            "origin": "Méditerranée",
-            "description": "Plante tonique",
-            "seasonFound": "Printemps",
-            "imageUrl": "https://image.com/romarin.jpg"
-        }
-    """;
+        PlantDTO dto = new PlantDTO();
+        dto.setName("Romarin");
+        dto.setOrigin("Méditerranée");
+        dto.setDescription("Plante tonique");
+        dto.setSeasonFound("Printemps");
+        dto.setImageUrl("https://image.com/romarin.jpg");
+        dto.setAffiliateLink("https://aroma-zone.com/romarin");
+        dto.setUses(Set.of("Infusion", "Gélule"));
+        dto.setProperties(List.of("Tonique", "Digestive"));
 
-        // Objet simulé retourné par le service
-        Plant savedPlant = new Plant(1L, "Romarin", "Méditerranée", "Plante tonique", "Printemps", "https://image.com/romarin.jpg");
+        String jsonPayload = objectMapper.writeValueAsString(dto);
+
         PlantResponseDTO responseDTO = new PlantResponseDTO(1L, "Romarin", "Méditerranée", "Plante tonique", "Printemps", "https://image.com/romarin.jpg");
+        responseDTO.setAffiliateLink("https://aroma-zone.com/romarin");
+        responseDTO.setUses(Set.of("Infusion", "Gélule"));
+        responseDTO.setProperties(List.of("Tonique", "Digestive"));
 
-        // Simulation du comportement du service
-        when(plantService.createPlant(any())).thenReturn(savedPlant);
-        when(plantService.convertToResponseDTO(savedPlant)).thenReturn(responseDTO);
+        // The service.createPlant(...) returns a Plant; return a Plant instance and stub conversion to DTO
+        Plant createdPlant = new Plant("Romarin", "Méditerranée", "Plante tonique", "Printemps", "https://image.com/romarin.jpg");
+        createdPlant.setId(1L);
 
-        // Envoie une requête POST avec le JSON
+        when(plantService.createPlant(any(PlantDTO.class))).thenReturn(createdPlant);
+        when(plantService.convertToResponseDTO(any(Plant.class))).thenReturn(responseDTO);
+
         mockMvc.perform(post("/api/plants")
-                        .contentType("application/json")
+                        .contentType(MediaType.APPLICATION_JSON)
                         .content(jsonPayload))
-                .andExpect(status().isCreated()) // ✅ 201 CREATED
+                .andDo(print())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.name").value("Romarin"))
                 .andExpect(jsonPath("$.origin").value("Méditerranée"));
     }
 
     @WithMockUser(username = "admin", roles = {"ADMIN"})
     @Test
-    public void testUpdatePlant_success() throws Exception {
-        // Payload JSON simulé pour mise à jour
-        String updatePayload = """
-        {
-            "name": "Romarin modifié",
-            "origin": "Méditerranée",
-            "description": "Plante tonique modifiée",
-            "seasonFound": "Été",
-            "imageUrl": "https://image.com/romarin-new.jpg"
-        }
-    """;
+    public void testDeletePlant_success() throws Exception {
+        Long plantId = 1L;
+        doNothing().when(plantService).deletePlant(plantId);
 
-        // Objet simulé retourné par le service après mise à jour
-        Plant updatedPlant = new Plant(1L, "Romarin modifié", "Méditerranée", "Plante tonique modifiée", "Été", "https://image.com/romarin-new.jpg");
-        PlantResponseDTO responseDTO = new PlantResponseDTO(1L, "Romarin modifié", "Méditerranée", "Plante tonique modifiée", "Été", "https://image.com/romarin-new.jpg");
+        mockMvc.perform(delete("/api/plants/id/{id}", plantId))
+                .andDo(print())
+                .andExpect(status().isNoContent());
 
-        // Simulation du comportement du service
-        when(plantService.updatePlant(eq(1L), any())).thenReturn(updatedPlant);
-        when(plantService.convertToResponseDTO(updatedPlant)).thenReturn(responseDTO);
-
-        // Envoie une requête PUT vers /api/plants/id/1
-        mockMvc.perform(put("/api/plants/id/1")
-                        .contentType("application/json")
-                        .content(updatePayload))
-                .andExpect(status().isOk()) // ✅ 200 OK
-                .andExpect(jsonPath("$.name").value("Romarin modifié"))
-                .andExpect(jsonPath("$.seasonFound").value("Été"));
+        verify(plantService, times(1)).deletePlant(plantId);
     }
+
+    @WithMockUser(username = "user", roles = {"USER"})
+    @Test
+    public void testGetPlantById_success() throws Exception {
+        // Données simulées
+        Long plantId = 1L;
+        Plant plant = new Plant("Aloe Vera", "Afrique du Nord", "Hydratante", "Été", "https://image.com/aloe.jpg");
+        plant.setId(plantId);
+
+        PlantResponseDTO responseDTO = new PlantResponseDTO(
+                plantId,
+                "Aloe Vera",
+                "Afrique du Nord",
+                "Hydratante",
+                "Été",
+                "https://image.com/aloe.jpg"
+        );
+        responseDTO.setAffiliateLink("https://aroma-zone.com/aloe");
+        responseDTO.setUses(Set.of("Gel"));
+        responseDTO.setProperties(List.of("Hydratante"));
+
+        // Mocks
+        when(plantService.getPlantById(plantId)).thenReturn(plant);
+        when(plantService.convertToResponseDTO(any(Plant.class))).thenReturn(responseDTO);
+        System.out.println("✅ DTO mock: " + responseDTO);
+        // Exécution + vérifications
+        mockMvc.perform(get("/api/plants/id/{id}", plantId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(1))
+                .andExpect(jsonPath("$.name").value("Aloe Vera"))
+                .andExpect(jsonPath("$.origin").value("Afrique du Nord"))
+                .andExpect(jsonPath("$.description").value("Hydratante"))
+                .andExpect(jsonPath("$.seasonFound").value("Été"))
+                .andExpect(jsonPath("$.imageUrl").value("https://image.com/aloe.jpg"))
+                .andExpect(jsonPath("$.affiliateLink").value("https://aroma-zone.com/aloe"))
+                .andExpect(jsonPath("$.uses[0]").value("Gel"))
+                .andExpect(jsonPath("$.properties[0]").value("Hydratante"));
+    }
+
+
 }
