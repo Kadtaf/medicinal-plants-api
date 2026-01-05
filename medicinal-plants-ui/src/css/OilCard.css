@@ -33,7 +33,6 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 4px;
@@ -61,4 +60,11 @@
 
 .btn-view:hover {
     background-color: #27ae60; /* ✅ Vert foncé au survol */
+}
+
+.btn-edit {
+    background-color: #4d75f0;
+}
+.btn-edit:hover {
+    background-color: #133290;
 }

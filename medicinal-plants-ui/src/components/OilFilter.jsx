@@ -1,43 +1,71 @@
-import React, { useState } from 'react';
-import '../css/OilFilter.css';
+import React, { useState } from "react";
+import "../css/OilFilter.css";
+import { toast } from "react-toastify";
 
 const OilFilter = ({ onSearch, onReset }) => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [filterType, setFilterType] = useState('name');
-
-    const handleChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
+    const [searchTerm, setSearchTerm] = useState("");
+    const [filterType, setFilterType] = useState("name");
 
     const handleSearchClick = () => {
+        if (searchTerm.trim() === "") {
+            toast.info("💡 Entrez un mot-clé avant de rechercher !");
+            return;
+        }
+
         onSearch(searchTerm, filterType);
     };
 
     const handleReset = () => {
-        setSearchTerm('');
-        onSearch('', 'name'); // recharge toutes les huiles
+        setSearchTerm("");
         onReset();
     };
 
     return (
         <div className="oil-filter-bar">
-            <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
+            {/* Type de filtre */}
+            <select
+                value={filterType}
+                onChange={(e) => setFilterType(e.target.value)}
+                className="oil-filter-select"
+            >
                 <option value="name">Nom</option>
                 <option value="plant">Plante associée</option>
                 <option value="benefit">Bienfait</option>
             </select>
 
+            {/* Champ de recherche */}
             <input
                 type="text"
-                placeholder={`🔍 Rechercher par ${filterType}`}
+                placeholder={`🔍 Rechercher par ${
+                    filterType === "name"
+                        ? "nom"
+                        : filterType === "plant"
+                            ? "plante associée"
+                            : "bienfait"
+                }...`}
                 value={searchTerm}
-                onChange={handleChange}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="oil-filter-input"
             />
 
-            <button type="button" onClick={handleSearchClick}>🔍 Rechercher</button>
+            {/* Bouton rechercher */}
+            <button
+                type="button"
+                onClick={handleSearchClick}
+                className="oil-filter-button"
+            >
+                🔍 Rechercher
+            </button>
 
-            {searchTerm.trim() !== '' && (
-                <button type="button" onClick={handleReset}>Réinitialiser</button>
+            {/* Bouton reset */}
+            {searchTerm.trim() !== "" && (
+                <button
+                    type="button"
+                    onClick={handleReset}
+                    className="oil-filter-reset"
+                >
+                    🔄 Réinitialiser
+                </button>
             )}
         </div>
     );

@@ -9,6 +9,12 @@ const OilDetails = () => {
     const [oil, setOil] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    // 🔐 Récupération du rôle et du token
+    const role = localStorage.getItem("role");
+    const token = localStorage.getItem("token");
+    const isLoggedIn = !!token;
+    const isAdmin = role === "ROLE_ADMIN";
+
     useEffect(() => {
         getOilById(id)
             .then((res) => {
@@ -67,7 +73,9 @@ const OilDetails = () => {
                         </p>
                     )}
                     <div className="oil-details-actions">
+                    {isAdmin && isLoggedIn && (
                         <Link to={`/oils/edit/${oil.id}`} className="btn-edit">Modifier</Link>
+                    )}
                         <Link to="/oils" className="btn-back">← Retour à la liste</Link>
                     </div>
                 </div>

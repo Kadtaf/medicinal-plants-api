@@ -1,32 +1,16 @@
+/* Barre de filtre */
 .oil-filter-bar {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin: 2rem auto; /* ✅ centrage horizontal */
+    margin: 2rem auto;
     align-items: center;
-    justify-content: center; /* ✅ centrage du contenu */
-    max-width: 800px; /* ✅ limite la largeur pour éviter l'étalement */
+    justify-content: center;
+    max-width: 900px;
 }
 
-/* ✅ Champ de saisie */
-.oil-filter-bar input[type="text"] {
-    padding: 0.6rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    flex: 1 1 220px;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.oil-filter-bar input[type="text"]:focus {
-    outline: none;
-    border-color: #4caf50;
-    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
-}
-
-/* ✅ Menu déroulant */
-.oil-filter-bar select {
+/* Select */
+.oil-filter-select {
     padding: 0.6rem 1rem;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -36,38 +20,58 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.oil-filter-bar select:focus {
+.oil-filter-select:focus {
     outline: none;
     border-color: #4caf50;
     box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
-/* ✅ Boutons */
-.oil-filter-bar button {
+/* Champ de recherche */
+.oil-filter-input {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    flex: 1 1 240px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.oil-filter-input:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Boutons */
+.oil-filter-button,
+.oil-filter-reset {
     padding: 0.6rem 1rem;
     font-size: 1rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 /* Bouton Rechercher */
-.oil-filter-bar button[type="button"]:first-of-type {
+.oil-filter-button {
     background-color: #4caf50;
     color: white;
 }
 
-.oil-filter-bar button[type="button"]:first-of-type:hover {
+.oil-filter-button:hover {
     background-color: #388e3c;
+    transform: translateY(-1px);
 }
 
 /* Bouton Réinitialiser */
-.oil-filter-bar button[type="button"]:last-of-type {
+.oil-filter-reset {
     background-color: #007bff;
     color: white;
 }
 
-.oil-filter-bar button[type="button"]:last-of-type:hover {
-    background-color: #d32f2f;
+.oil-filter-reset:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
 }

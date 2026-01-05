@@ -29,8 +29,7 @@
 }
 
 .oil-details-content a {
-    color: #2980b9;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .oil-details-actions {
@@ -42,12 +41,15 @@
 .btn-edit,
 .btn-back {
     padding: 0.5rem 1rem;
-    background-color: #2ecc71;
     color: white;
     text-decoration: none;
     border-radius: 4px;
     font-weight: bold;
     transition: background-color 0.2s ease;
+}
+
+.btn-back {
+    background-color: #1cb882;
 }
 
 .btn-edit:hover,

@@ -65,21 +65,21 @@ public class OilController {
         return ResponseEntity.ok(oilService.convertToResponseDTO(oil));
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     public ResponseEntity<OilResponseDTO> create(@RequestBody Oil oil) {
         Oil created = oilService.createOil(oil);
         return ResponseEntity.status(HttpStatus.CREATED).body(oilService.convertToResponseDTO(created));
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("/id/{id}")
     public ResponseEntity<OilResponseDTO> update(@PathVariable Long id, @RequestBody Oil oil) {
         Oil updated = oilService.updateOil(id, oil);
         return ResponseEntity.ok(oilService.convertToResponseDTO(updated));
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("/id/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         oilService.deleteOil(id);
