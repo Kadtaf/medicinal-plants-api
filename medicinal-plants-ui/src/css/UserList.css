@@ -4,7 +4,7 @@
     margin: 0 auto;
 }
 
-/* 🧩 Header aligné */
+/* Header aligné */
 .user-list-header {
     display: flex;
     justify-content: space-between; /* ✅ titre à gauche, bouton à droite */
@@ -76,7 +76,7 @@
     background: #bb2d3b;
 }
 
-/* 🧨 Animation de confirmation suppression */
+/* Animation de confirmation suppression */
 .confirm-delete {
     background-color: #ffc107 !important;
     color: #222 !important;

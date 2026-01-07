@@ -1,4 +1,4 @@
-/* 🧴 Conteneur du formulaire */
+/* Conteneur du formulaire */
 .oil-form {
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
-/* 🏷️ Labels */
+/* Labels */
 .oil-form label {
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
     font-size: 1rem;
 }
 
-/* ✏️ Champs */
+/* Champs */
 .oil-form input,
 .oil-form textarea,
 .oil-form select {
@@ -42,7 +42,7 @@
     box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
-/* 🧩 Icônes de validation */
+/* Icônes de validation */
 .input-with-icon {
     display: flex;
     align-items: center;
@@ -61,14 +61,14 @@
     color: #e74c3c;
 }
 
-/* ⚠️ Messages d’erreur */
+/* Messages d’erreur */
 .oil-form .error {
     color: #e74c3c;
     font-size: 0.85rem;
     margin-top: 0.3rem;
 }
 
-/* 🖼 Aperçu image */
+/* Aperçu image */
 .image-preview img {
     width: 180px;
     height: auto;
@@ -77,7 +77,7 @@
     box-shadow: 0 3px 10px rgba(0,0,0,0.12);
 }
 
-/* 🔘 Bouton Valider */
+/* Bouton Valider */
 .submit-button,
 .oil-form button[type="submit"] {
     padding: 0.9rem;
@@ -97,7 +97,7 @@
     transform: translateY(-2px);
 }
 
-/* 🔙 Bouton retour */
+/* Bouton retour */
 .back-button-container {
     display: flex;
     justify-content: center;

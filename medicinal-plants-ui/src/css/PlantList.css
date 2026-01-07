@@ -240,7 +240,7 @@
     background-color: #5a6268;
 }
 
-/* 🔥 Animation de suppression fluide */
+/* Animation de suppression fluide */
 .plant-card.removing {
     opacity: 0;
     transform: scale(0.9);
