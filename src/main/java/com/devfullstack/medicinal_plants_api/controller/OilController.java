@@ -33,7 +33,7 @@ public class OilController {
             @RequestParam(defaultValue = "6") int size,
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String plant,
-            @RequestParam(required = false) String benefit // ✅ Ajouté ici
+            @RequestParam(required = false) String benefit
     ) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Oil> oilPage;
@@ -42,7 +42,7 @@ public class OilController {
             oilPage = oilService.getPaginatedOilsByName(name, pageable);
         } else if (plant != null && !plant.isBlank()) {
             oilPage = oilService.getPaginatedOilsByPlantName(plant, pageable);
-        } else if (benefit != null && !benefit.isBlank()) { // ✅ Ajouté ici
+        } else if (benefit != null && !benefit.isBlank()) {
             oilPage = oilService.getPaginatedOilsByBenefit(benefit, pageable);
         } else {
             oilPage = oilService.getPaginatedOils(pageable);

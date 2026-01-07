@@ -1,24 +1,50 @@
-.breadcrumb {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+/* Conteneur */
+.breadcrumb-container {
+    margin-bottom: 1.5rem;
+}
+
+/* Liste */
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
     color: #555;
 }
 
-.breadcrumb a {
-    text-decoration: none;
-    color: #007c91;
+/* Élément */
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
 }
 
-.breadcrumb a:hover {
+/* 🔗 Lien */
+.breadcrumb-link {
+    text-decoration: none;
+    color: #1e88e5;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #0d6efd;
     text-decoration: underline;
 }
 
+/* Élément courant */
 .breadcrumb-current {
-    font-weight: bold;
-    color: #333;
+    font-weight: 700;
+    color: #2c3e50;
 }
 
+/* Séparateur */
 .breadcrumb-separator {
-    margin: 0 0.5rem;
+    margin: 0 0.3rem;
     color: #999;
+    font-weight: bold;
+    user-select: none;
 }

@@ -22,6 +22,8 @@
     align-items: center;
     gap: 16px;
     margin: 0;
+    position: relative;
+    z-index: 1000;
 }
 
 .navbar-links a {
@@ -60,7 +62,7 @@
     border-color: #ef5350;
 }
 
-/* 🔹 Lien admin */
+/* Lien admin */
 .admin-link {
     display: inline-flex;
     align-items: center;
@@ -73,7 +75,7 @@
     color: #0056b3;
 }
 
-/* 🔹 Boutons connexion / déconnexion */
+/* Boutons connexion / déconnexion */
 .nav-button {
     background: none;
     border: none;
@@ -89,7 +91,7 @@
 }
 
 .logout-btn {
-    color: #dc3545;
+    color: #ffffff;
 }
 
 .login-btn:hover {
@@ -100,7 +102,7 @@
     color: #b52d3a;
 }
 
-/* 🔧 Burger button */
+/* Burger button */
 .burger-button {
     display: none;
     font-size: 1.6rem;
@@ -108,12 +110,50 @@
     border: none;
     color: white;
     cursor: pointer;
+    position: relative;
+    z-index: 9999;
 }
 
-/* 🔧 Responsive menu */
+/* --- Burger animé --- */
+.burger-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.burger-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animation en X */
+.burger-button.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-button.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-button.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+
+/* Responsive menu */
 @media screen and (max-width: 768px) {
     .burger-button {
-        display: block;
+        display: flex;
     }
 
     .navbar {

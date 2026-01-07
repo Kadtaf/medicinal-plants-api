@@ -1,29 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { createOil, getAllOils } from '../services/OilService';
-import OilForm from './OilForm';
-import { toast } from 'react-toastify';
-import '../css/OilCreateEdit.css';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { createOil, getAllOils } from "../services/OilService";
+import OilForm from "./OilForm";
+import { toast } from "react-toastify";
+import "../css/OilCreateEdit.css";
 
 const OilCreate = () => {
     const navigate = useNavigate();
     const [usedImages, setUsedImages] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // 🔄 Charger les images déjà utilisées par d'autres huiles
+    // 🔄 Charger les images déjà utilisées
     useEffect(() => {
         getAllOils(0, 1000)
             .then((res) => {
-                const urls = res.data.oils.map(o => o.imageUrl);
+                const urls = res.data.oils.map((o) => o.imageUrl);
                 setUsedImages(urls);
             })
-            .catch(() => console.error("❌ Erreur chargement images utilisées"));
+            .catch(() => {
+                console.error("❌ Erreur chargement images utilisées");
+                toast.error("Impossible de charger les images existantes.");
+            })
+            .finally(() => setLoading(false));
     }, []);
 
     const handleCreate = (data) => {
         createOil(data)
             .then(() => {
-                toast.success("✅ Huile créée avec succès !");
-                navigate('/oils');
+                toast.success("🧴 Huile créée avec succès !");
+                navigate("/oils");
             })
             .catch(() => toast.error("❌ Erreur lors de la création."));
     };
@@ -31,7 +36,12 @@ const OilCreate = () => {
     return (
         <div className="oil-form-page">
             <h2>➕ Ajouter une huile essentielle</h2>
-            <OilForm onSubmit={handleCreate} usedImages={usedImages} />
+
+            {loading ? (
+                <p className="loading-text">Chargement...</p>
+            ) : (
+                <OilForm onSubmit={handleCreate} usedImages={usedImages} />
+            )}
         </div>
     );
 };

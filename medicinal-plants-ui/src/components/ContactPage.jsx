@@ -13,10 +13,10 @@ function ContactPage() {
         setError('');
 
         emailjs.sendForm(
-            'service_xxxxxx', // ← ton ID de service EmailJS
-            'template_xxxxxx', // ← ton ID de template EmailJS
+            'service_rqryd6m', // ← ton ID de service EmailJS
+            'template_w55bffh', // ← ton ID de template EmailJS
             form.current,
-            'user_xxxxxx' // ← ton clé publique EmailJS
+            'X62uQOfOdPs6c8k0M' // ← ton clé publique EmailJS
         )
             .then(() => {
                 setStatus("✅ Message envoyé avec succès !");

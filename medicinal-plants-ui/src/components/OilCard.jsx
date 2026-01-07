@@ -22,27 +22,29 @@ const OilCard = ({ oil, onDelete, isAdmin }) => {
                 <p>{oil.benefits?.slice(0, 100)}...</p>
 
                 <div className="oil-card-actions">
-                    {/* 🔍 Voir plus — accessible à tous */}
+                    <div className="button-row">
+                    {/* Voir plus — accessible à tous */}
                     <Link to={`/oils/id/${oil.id}`} className="btn-icon btn-view">
                         <FaEye /> Voir Plus
                     </Link>
 
-                    {/* ✏️ Modifier — seulement admin */}
+                    {/* Modifier — seulement admin */}
                     {isAdmin && (
-                        <Link to={`/oils/edit/${oil.id}`} className="btn-icon btn-edit">
-                            <FaEdit /> Modifier
-                        </Link>
-                    )}
+                            <Link to={`/oils/edit/${oil.id}`} className="btn-icon btn-edit">
+                                <FaEdit /> Modifier
+                            </Link>
+                        )}
 
-                    {/* 🗑️ Supprimer — seulement admin */}
-                    {isAdmin && (
-                        <button
-                            onClick={handleDelete}
-                            className="btn-icon btn-delete"
-                        >
-                            <FaTrash /> Supprimer
-                        </button>
-                    )}
+                        {/* 🗑️ Supprimer — seulement admin */}
+                        {isAdmin && (
+                            <button
+                                onClick={handleDelete}
+                                className="btn-icon btn-delete"
+                            >
+                                <FaTrash /> Supprimer
+                            </button>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

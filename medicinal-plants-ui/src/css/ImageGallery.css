@@ -1,4 +1,4 @@
-
+/* 🖼 Aperçu image dans le formulaire */
 .image-preview {
     margin-top: 1rem;
     text-align: center;
@@ -6,22 +6,46 @@
 
 .image-preview img {
     max-width: 100%;
-    max-height: 200px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    max-height: 220px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* 📚 Galerie */
 .image-gallery {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
+/* 🔍 Barre de recherche */
+.image-search {
+    width: 100%;
+    max-width: 350px;
+    margin: 1rem auto 1.5rem auto;
+    display: block;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-search:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76,175,80,0.2);
+}
+
+/* 🖼 Liste horizontale */
 .image-scroll {
     display: flex;
     overflow-x: auto;
-    gap: 1rem;
+    gap: 1.2rem;
     padding-bottom: 1rem;
+    scroll-behavior: smooth;
 }
 
+/* 📦 Élément image */
 .image-item {
     display: flex;
     flex-direction: column;
@@ -29,62 +53,73 @@
     min-width: 110px;
 }
 
+/* 🖼 Image */
+.gallery-image,
 .image-item img {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
-    border: 2px solid transparent;
-    transition: border 0.2s ease;
+    border: 3px solid transparent;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.image-item img:hover {
-    border: 2px solid #3498db;
+/* Hover */
+.gallery-image:hover {
+    transform: scale(1.05);
+    border-color: #4caf50;
 }
 
-.image-item img.selected {
-    border: 2px solid #2ecc71;
+/* Sélectionnée */
+.gallery-image.selected {
+    border-color: #2ecc71;
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
 }
 
-.image-label {
-    margin-top: 0.3rem;
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-align: center;
+/* Déjà utilisée */
+.gallery-image.used {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: 0 0 0 3px #ff9800;
 }
 
-.image-search {
-    width: 100%;
-    max-width: 300px;
-    margin: 1rem auto;
-    display: block;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.image-item img.used {
-    box-shadow: 0 0 0 3px orange;
-    opacity: 0.8;
-}
-
-.image-wrapper {
-    position: relative;
-    width: 100px;
-    height: 100px;
-}
-
+/* Badge "utilisée" */
 .used-badge {
     position: absolute;
-    top: 4px;
-    right: 4px;
-    background-color: orange;
+    top: 6px;
+    right: 6px;
+    background-color: #ff9800;
     color: white;
     font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 3px 7px;
+    border-radius: 6px;
     font-weight: bold;
-    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Conteneur image */
+.image-wrapper {
+    position: relative;
+    width: 110px;
+    height: 110px;
+}
+
+/* Nom de l’image */
+.image-label {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Messages */
+.gallery-loading,
+.gallery-error,
+.gallery-empty {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #555;
 }

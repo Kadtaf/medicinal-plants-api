@@ -1,13 +1,16 @@
-import axios from 'axios';
+import axios from "axios";
 
+const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
+
+// 🔗 Instance Axios dédiée aux huiles
 const api = axios.create({
-    baseURL: 'http://localhost:8080/api/oils',
+    baseURL: `${BASE_URL}/api/oils`,
 });
 
-// Intercepteur : ajoute le token à toutes les requêtes si présent
+// 🔐 Intercepteur : ajoute automatiquement le token
 api.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem("token");
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
@@ -16,50 +19,60 @@ api.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
-// Récupérer la liste paginée des huiles
-export const getAllOils = (page = 0, size = 6, name = '', plant = '', benefit = '') => {
+// 🛡️ Gestion centralisée des erreurs
+const handleError = (error) => {
+    console.error("❌ API OilService Error:", error);
+
+    const message =
+        error?.response?.data?.message ||
+        error?.response?.data ||
+        "Erreur lors de la communication avec le serveur.";
+
+    return Promise.reject(message);
+};
+
+// 📌 Récupérer la liste paginée des huiles
+export const getAllOils = (
+    page = 0,
+    size = 6,
+    name = "",
+    plant = "",
+    benefit = ""
+) => {
     const params = new URLSearchParams();
-    params.append('page', page);
-    params.append('size', size);
-    if (name) params.append('name', name);
-    if (plant) params.append('plant', plant);
-    if (benefit) params.append('benefit', benefit);
+    params.append("page", page);
+    params.append("size", size);
 
-    return api.get(`?${params.toString()}`);
+    if (name) params.append("name", name);
+    if (plant) params.append("plant", plant);
+    if (benefit) params.append("benefit", benefit);
+
+    return api.get(`?${params.toString()}`).catch(handleError);
 };
 
-// Récupérer une huile par son ID
+// 📌 Récupérer une huile par ID
 export const getOilById = (id) => {
-    return api.get(`/id/${id}`);
+    return api.get(`/id/${id}`).catch(handleError);
 };
 
-// Rechercher des huiles par nom
-export const searchOilsByName = (name) => {
-    return api.get(`/search?name=${encodeURIComponent(name)}`);
-};
-
-// Rechercher des huiles par nom de plante
-export const searchOilsByPlant = (plantName) => {
-    return api.get(`/searchByPlant?plant=${encodeURIComponent(plantName)}`);
-};
-
-// Créer une nouvelle huile
+// 📌 Créer une nouvelle huile
 export const createOil = (data) => {
-    return api.post('', data);
+    return api.post("", data).catch(handleError);
 };
 
-// Mettre à jour une huile existante
+// 📌 Mettre à jour une huile
 export const updateOil = (id, data) => {
-    return api.put(`/id/${id}`, data);
+    return api.put(`/id/${id}`, data).catch(handleError);
 };
 
-// Supprimer une huile
+// 📌 Supprimer une huile
 export const deleteOil = (id) => {
-    return api.delete(`/id/${id}`);
+    return api.delete(`/id/${id}`).catch(handleError);
 };
 
-const BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080';
-
+// 📌 Récupérer les huiles associées à une plante
 export const getOilsByPlantId = (plantId) => {
-    return axios.get(`${BASE_URL}/api/oils/plant/${plantId}`);
+    return axios
+        .get(`${BASE_URL}/api/oils/plant/${plantId}`)
+        .catch(handleError);
 };

@@ -128,7 +128,7 @@ const OilList = () => {
             <OilFilter onSearch={handleSearch} onReset={handleReset} />
 
             <div className="oil-list-header">
-                <h2>🧴 Huiles essentielles</h2>
+                <h2>Nos huiles essentielles bio</h2>
 
                 {isAdmin && isLoggedIn && (
                     <button

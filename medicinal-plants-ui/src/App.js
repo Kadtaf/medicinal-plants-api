@@ -27,7 +27,7 @@ function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [role, setRole] = useState(null);
 
-    // 🧠 Vérifie au chargement s’il existe un token en localStorage
+    // Vérifie au chargement s’il existe un token en localStorage
     useEffect(() => {
         const token = localStorage.getItem("token");
         const storedRole = localStorage.getItem("role");
